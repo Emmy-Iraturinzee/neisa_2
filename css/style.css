@@ -227,7 +227,7 @@ h3 {
   content: "";
 
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.754) 0%, black 100%);
+  background: white;
   /* Chrome10-25,Safari5.1-6 */
 
   /* IE6-9 */
@@ -1485,7 +1485,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/bgbgbg.png);
+  /* background-image: url(../img/banner/bgbgbg.png); */
 
 
   
