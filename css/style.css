@@ -26,7 +26,8 @@
 /* Large Mobile :480px. */
 /* line 6, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 body {
-  font-family: "Muli", sans-serif;
+  font-family: "Arial", sans-serif;
+
   font-weight: normal;
   font-style: normal;
 
@@ -399,6 +400,9 @@ h3 {
   /* line 307, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
   .mb-75 {
     margin-bottom: 30px;
+  }
+  .brand_logo{
+    width: 50px;
   }
 }
 
@@ -1481,7 +1485,9 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/lalalalaal.png);
+  background-image: url(../img/banner/bgbgbg.png);
+
+
   
 
 
@@ -1511,8 +1517,19 @@ h3 {
 @media (max-width: 767px) {
   /* line 10, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
   .slider_area .single_slider {
+  
     height: 100%;
 
+  }
+  .hero_container{
+    margin-top: 200px !important;
+  }
+  .brand_wrap{
+    margin-top: 20px;
+  }
+  .boxed-btn3 {
+    margin-top: 56px !important;
+    margin-bottom: 80px !important;
   }
 }
 
