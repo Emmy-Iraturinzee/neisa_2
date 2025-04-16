@@ -1599,7 +1599,7 @@ h3 {
 /* line 65, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 {
   
-  font-size: 100px;
+  font-size: 80px;
   text-transform: uppercase;
   font-weight: 400;
   color: #fff;
@@ -3343,6 +3343,11 @@ h6 {
   top: 4px;
   left: 0;
   border-radius: 50%;
+}
+
+.text_p2{
+  font-family: "anton", sans-serif !important;
+  font-weight: 100 !important;
 }
 
 /* line 473, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
