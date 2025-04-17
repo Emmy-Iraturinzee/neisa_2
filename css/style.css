@@ -1546,6 +1546,12 @@ h3 {
   }
 
 }
+@media (max-width: 380px){
+  .brand_wrap{
+    margin-top: 100px;
+  }
+
+}
 
 /* line 21, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text {
