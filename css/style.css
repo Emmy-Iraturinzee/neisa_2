@@ -1645,6 +1645,9 @@ h3 {
     margin-top: -60px !important;
     margin-bottom: 60px !important;
   }
+.slider_area{
+  height: auto !important;
+}
 }
 
 
