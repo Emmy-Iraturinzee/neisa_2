@@ -522,7 +522,7 @@ h3 {
 
 /* line 27, ../../Arafath/CL/December/236. Event-02/HTML/scss/_btn.scss */
 .boxed-btn3 {
-  background: #126EB7;
+  background: #FF4533;
   /* IE6-9 */
   color: #fff;
   display: inline-block;
@@ -544,6 +544,7 @@ h3 {
   transition: 0.3s;
   cursor: pointer;
   letter-spacing: 2px;
+ 
 }
 
 /* line 46, ../../Arafath/CL/December/236. Event-02/HTML/scss/_btn.scss */
@@ -1485,14 +1486,9 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  /* background-image: url(../img/banner/bgbgbg.png); */
 
-
-  
-
-
-
-  
+  background-image: url(../img/banner/bgbgbg.png);
+ 
 }
 
 /* line 4, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
@@ -1625,7 +1621,33 @@ h3 {
   .slider_area .single_slider .slider_text span {
     font-size: 20px;
   }
+  .slider_text{
+    margin-top: 130px !important;
+  }
+  .partner-img{
+    margin-top: -50px !important;
+  }
+  .slider_area .single_slider .slider_text h3{
+    font-size: 50px !important;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    width: 100%;
+
+  }
+   .boxed-btn3{
+    margin-top: -130px !important;
+  }
+  .qr-code{
+    margin-top: -40px !important;
+    margin-bottom: 60px !important;
+  }
 }
+
+
 
 /* line 65, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 {
@@ -1635,8 +1657,9 @@ h3 {
   font-weight: 400;
   color: #fff;
   line-height: 1;
-  margin-top: 55px;
+  margin-top: 50px;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -1951,6 +1974,9 @@ h3 {
   background: rgba(255, 255, 255, 0.2);
   left: 0;
   border: none !important;
+}
+.owl-carousel img{
+  margin-left: -40pxs;
 }
 
 /* line 273, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
