@@ -32,6 +32,7 @@ body {
   font-style: normal;
 
 
+
 }
 
 /* line 25, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
@@ -1488,6 +1489,9 @@ h3 {
 .slider_bg_1 {
 
   background-image: url(../img/banner/bgbgbg.png);
+  background-size: cover;
+ 
+  
  
 }
 
@@ -1500,6 +1504,7 @@ h3 {
 .slider_area {
   position: relative;
   z-index: 0;
+  
 }
 
 /* line 10, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
