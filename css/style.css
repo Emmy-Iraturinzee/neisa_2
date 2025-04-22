@@ -1394,7 +1394,7 @@ h3 {
   background: linear-gradient(to right, #0072bc, #00c853);
   color: white;
   font-weight: 900;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   padding: 25px 30px;
   border: none;
   cursor: pointer;
@@ -1681,7 +1681,7 @@ h3 {
 }
 
 .slider_text{
-  margin-top: 200px;
+  margin-top: 180px;
 }
 
 /* line 65, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
