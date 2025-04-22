@@ -1668,12 +1668,12 @@ h3 {
     width: 100%;
 
   }
-   .register-btn{
-    margin-top: -100px !important;
+   .about_info{
+    margin-top: 5px !important;
   }
   .qr-code{
-    margin-top: -40px !important;
-    margin-bottom: 60px !important;
+    margin-top: -75px !important;
+    margin-bottom: 34px !important;
   }
 .slider_area{
   height: auto !important;
@@ -1681,7 +1681,7 @@ h3 {
 }
 
 .slider_text{
-  margin-top: 180px;
+  margin-top: 140px;
 }
 
 /* line 65, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
