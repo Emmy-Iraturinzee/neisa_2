@@ -1596,6 +1596,9 @@ h3 {
   .text-center {
     margin-top: 150px !important;
   }
+  .img-logo{
+    width: 50px !important;
+  }
 
  
 }
