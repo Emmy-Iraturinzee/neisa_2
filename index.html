@@ -7,6 +7,21 @@
     <title>NEISA - Kigali</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0091ff">
+    <meta name="keywords" content="">
+    <meta name="author" content="NEISA">
+    <meta name="copyright" content="NEISA">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="1 days">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+    <!-- <meta name="url" content="https://neisa.org"> -->
+    <meta name="author" content="NEISA">
+    <meta name="copyright" content="NEISA">
+  
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/logo_2.png">
@@ -29,17 +44,30 @@
 </head>
 
 <body>
-    <!--[if lte IE 9]>
+    <!-- [if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+        <![endif] -->
 
     <!-- header-start -->
     <header>
+
+        
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
+                <div id="progress-bar-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 1px; z-index: 9999;">
+                    <div id="progress-bar" style="height: 100%; width: 0; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
+                </div>
+                <script>
+                    window.addEventListener('scroll', function() {
+                        const scrollTop = window.scrollY;
+                        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        const scrollPercent = (scrollTop / docHeight) * 100;
+                        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+                    });
+                </script>
                 <div class="container">
                     <div class="header_bottom_border">
-                        <div class="row align-items-center">
+                        <div class="row  ">
                             <div class="col-xl-3 col-lg-3">
                                 <div class="logo">
                                     <a href="index.html">
@@ -47,13 +75,28 @@
                                     </a>
                                 </div>
                             </div>
-                            <!-- <div class="col-xl-6 col-lg-6">
+                         <div class="col-xl-6 col-lg-6" style="margin-left: 200px;">
                                 <div class="main-menu  d-none d-lg-block">
-                                    <nav>
+                                    <nav >
+                                    
+                                        <!-- <style>
+                                            #navigation li a:hover {
+                                                border-bottom: 3px solid;
+                                                border-image: linear-gradient(to right, #63d96a, #0091ff);
+                                                border-image-slice: 1;
+                                                transition: border-bottom 0.3s ease-in-out;
+                                              
+                                            }
+
+                                         
+                                        </style> -->
                                         <ul id="navigation">
-                                            <li><a href="index.html">home</a></li>
-                                            <li><a href="performer.html">Performer</a></li>
-                                            
+                                            <li><a  href="index.html">home</a></li>
+                                            <li><a class="btn-gradient" href="#about_us">About NEISA</a></li>
+                                            <li><a class="btn-gradient" href="#speakers">speakers</a></li>
+                                     
+                                            <li><a href="">Program</a></li>
+<!--                                             
                                             <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="about.html">about</a></li>
@@ -61,22 +104,14 @@
                                                     <li><a href="Venue.html">Venue</a></li>
                                                     <li><a href="elements.html">elements</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            </li> -->
+                                       
                                         </ul>
                                     </nav>
                                 </div>
-                            </div> -->
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                           
-                            </div>
-                            <div class="col-12">
+                            </div> 
+                         
+                            <div class="col-12" >
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
                         </div>
@@ -89,101 +124,149 @@
     <!-- header-end -->
 
     <mian>
+        
 <section>
+  
       <div class="slider_area">
         <div class="single_slider  d-flex align-items-center  overlay">
-            <div class="video_overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2, 38, 14, 0.561); z-index: 1;"></div>
+            <div class="video_overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(1, 10, 4, 0.649); z-index: 1;"></div>
             <video autoplay muted loop id="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
                 <source src="img/banner/vecteezy_africa-map-futuristic-broadcast-animation-blue-free-download_46161810 (1) (1).mp4" type="video/mp4">
          
             </video>
-            <div class="container">
-                <div class="row align-items-center justify-content-center text-center">
-                    <div class="col-xl-12" style="z-index: 1000; ">
+            <div class="container text-center">
+                <div class="row align-items-center justify-content-center" style="margin-top: -100px;">
+                    <div class="col" style="z-index: 1000; ">
                         <div class="slider_text">
-                            <div class="shape_1 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape/shape_1.svg" alt="">
-                            </div>
-                            <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape/shape_2.svg" alt="">
-                            </div>
-                            <span  class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s" style="margin-top: 100px;">30 JUNE - 01 JULY 2025</span>
-                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">Nuclear Energy Innovation Summit for Africa - NEISA</h3>
-                            <p class="wow fadeInLeft mb-5" data-wow-duration="1s" data-wow-delay=".5s">CONVENTION CENTER - KIGALI</p>
-                        </div>
-                        <div class="about_info align-items-center justify-content-center">
+                            
+                          
+                            <!-- <span  class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s" style="margin-top: 0px;">30 JUNE - 01 JULY 2025</span> -->
+                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s" ><span style="background: linear-gradient(to right, #63d96a, #0091ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 80px;">Nuclear Energy Innovation</span> Summit for Africa - NEISA</h3>
+                            <p class="wow fadeInLeft " data-wow-duration="1s" data-wow-delay=".5s" style="font-family:Helvetica, sans-serif; font-weight: lighter; margin-top: -20px;">CONVENTION CENTER - KIGALI</p>
+                            <p class="wow fadeInLeft mb-5" data-wow-duration="1s" data-wow-delay=".5s" style="font-family:Helvetica, sans-serif; font-weight: lighter; margin-top: -30px;">MAY 30 - JUNE 1, 2025</p>
 
-                            <img  src="img/banner/adobe-express-qr-code.png" class="qr-code" alt="" style="width: 150px; height: 150px; margin-top: -30px; margin-bottom: 20px;">     
-                             </div>
-                        <div class="about_info align-items-center justify-content-center" style="margin-bottom: 50px; margin-top: 30px;">
-
-                            <a href="https://neisa.qtsoftwareltd.com/registration" class="register-btn  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s">REGISTER NOW</a>
+                            <a href="#about_us" class="btn-gradient wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s" style="display: inline-block; padding: 17px 60px; font-size: 18px; font-family: Helvetica, sans-serif; font-weight: 800; color: #fff; text-decoration: none; border-radius: 5px; background: linear-gradient(to right, #63d96a, #0091ff);">LEARN MORE</a>
+                            <script>
+                                document.querySelector('.btn-gradient').addEventListener('click', function(event) {
+                                    event.preventDefault();
+                                    const target = document.querySelector(this.getAttribute('href'));
+                                    if (target) {
+                                        window.scrollTo({
+                                            top: target.offsetTop,
+                                            behavior: 'smooth'
+                                        });
+                                    }
+                                });
+                            </script>
                         </div>
-
-            
-                        <div>
-                            <img src="img/banner/partner_correct.png" style="width: 100%; height: 100%; ">
-                        </div>
+                      
+                 
                     </div>
+                 
                    
-                    <div class="container  align-items-center justify-content-center mt-5">
-                        <!-- <div class="col-lg-12">
-                            <div class="brand_wrap">
-                                <div class="brand_active owl-carousel">
-                                  
-                                 
-                                    <div class="single_brand text-center">
-                                        <img src="img/banner/coat-of-arms-of-rwanda-logo-png_seeklogo-412514.png" style="width: 90px;" alt="">
-                                    </div>
-                                    <div class="single_brand text-center">
-                                        <img src="img/banner/International_Atomic_Energy_Agency_Logo.svg.png" style="width: 70px;" alt="">
-                                    </div>
-                                    <div class="single_brand text-center">
-                                        <img src="img/banner/nuclear_energeyye-removebg-preview.png" style="width: 200px;" alt="">
-                                    </div>
-                                    <div class="single_brand text-center">
-                                        <img src="img/banner/World_Nuclear_Association.svg.png" style="width:200px;" alt="">
-                                    </div>
-                                    <div class="single_brand text-center">
-                                        <img src="img/banner/UNECA-removebg-preview.png" style="width: 90px;" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
+               
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- <section>
-    <div class="container about">
-        <h3 style=" margin-top: 70px; font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #080808; ">About NEISA</h3>
-        <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
+<section  id="about_us">
 
-    <p class="mt-3" style="font-size: 20px; font-family: Helvetica, sans-serif; font-weight: lighter !important;">T
-        he first two days of the Summit, Aug 27th and 28th, are designed especially
-         for regional stakeholders, with educational workshops on workforce development,
-          stakeholder engagement, and nuclear financing, along with interactive sessions 
-          and Q&A’s. The Summit general sessions, taking place on August 29th and 30th, will 
-          include keynotes and robust panel discussions on a variety of critical topics,
-           from Africa’s industrial readiness to managing the supply chain and the importance 
-           of women and youth in the workforce, among other topics.</br></br>
-        From August 27-30, 2024, the U.S. Department of Energy (DOE), in collaboration with
-         the Kenyan Nuclear Power and Energy Agency (NuPEA) and the Ministry of Energy and
-          Petroleum of Kenya (MoEP), will host the second U.S.-Africa Nuclear Energy Summit
-           (USANES): Industry Readiness Edition. Developed under the auspices of the regional 
-           Clean Energy Training Center (CETC), the Summit will be held at the Mövenpick Hotel
-            & Residences in Nairobi, Kenya.
-        
-    </p>
+</section>
+<section >
+
+</section>
+
+<section  >
+
+</section>
+<section id="">
+    <div class=" about" style="position: relative; overflow: hidden;">
+        <div class="container">
+            <h3 style=" margin-top: 70px; font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #080808; ">ABOUT NEISA</h3>
+            <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
+        </div>
+       
+
+        <!-- Background shapes -->
+         <div class="wow fadeInUp"  data-wow-duration="1s" data-wow-delay=".5s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+            <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: rgba(99, 217, 107, 0.091); border-radius: 50%;"></div>
+            <div style="position: absolute; top: 200px; right: -50px; width: 200px; height: 200px; background: rgba(0, 145, 255, 0.098); border-radius: 50%;"></div>
+
+         </div>
+
+         <div class="container">
+            <p class="wow fadeInRight mt-4" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 18px; font-family: Helvetica, sans-serif; font-weight: lighter !important;">
+                The first two days of the Summit, Aug 27th and 28th, are designed especially
+                for regional stakeholders, with educational workshops on workforce development,
+                stakeholder engagement, and nuclear financing, along with interactive sessions 
+                and Q&A’s. The Summit general sessions, taking place on August 29th and 30th, will 
+                include keynotes and robust panel discussions on a variety of critical topics,
+                from Africa’s industrial readiness to managing the supply chain and the importance 
+                of women and youth in the workforce, among other topics.</br></br>
+                From August 27-30, 2024, the U.S. Department of Energy (DOE), in collaboration with
+                the Kenyan Nuclear Power and Energy Agency (NuPEA) and the Ministry of Energy and
+                Petroleum of Kenya (MoEP), will host the second U.S.-Africa Nuclear Energy Summit
+                (USANES): Industry Readiness Edition. Developed under the auspices of the regional 
+                Clean Energy Training Center (CETC), the Summit will be held at the Mövenpick Hotel
+                & Residences in Nairobi, Kenya.
+            </p>
+         </div>
+       
     </div>
-
- 
-</section> -->
-<!-- <section>
-    <div class="container Speakers">
-        <h3 style=" margin-top: 50px; font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #080808; ">Speakers</h3>
+</section>
+<section>
+    <div class="container">
+        <script>
+            function smoothCountUp(id, target, duration) {
+                const element = document.getElementById(id);
+                let start = 0;
+                const increment = target / (duration / 10);
+                const interval = setInterval(() => {
+                    start += increment;
+                    if (start >= target) {
+                        start = target;
+                        clearInterval(interval);
+                    }
+                    element.textContent = Math.floor(start);
+                }, 10);
+            }
+    
+            window.addEventListener('load', () => {
+                smoothCountUp('delegate-count', 500, 2000);
+                smoothCountUp('students-count', 300, 2000);
+                smoothCountUp('presidents-count', 50, 2000);
+                smoothCountUp('staff-count', 100, 2000);
+            });
+        </script>
+            <div class="row mt-5 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                
+                <div class="col-6 col-md-3">
+                    <h2 id="delegate-count" style="font-size: 50px; color: #0091ff;">0</h2> 
+                    <p style="font-size: 18px; font-family: Helvetica, sans-serif;">Delegates</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 id="students-count" style="font-size: 50px; color: #0091ff;">0</h2>
+                    <p style="font-size: 18px; font-family: Helvetica, sans-serif;">Students</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 id="presidents-count" style="font-size: 50px; color: #0091ff;">0</h2>
+                    <p style="font-size: 18px; font-family: Helvetica, sans-serif;">Presidents</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 id="staff-count" style="font-size: 50px; color: #0091ff;">0</h2>
+                    <p style="font-size: 18px; font-family: Helvetica, sans-serif;">Staff</p>
+                </div>
+            
+                
+              
+             
+            </div>
+    </div>
+</section>
+<section id="speakers">
+    <div class="container Speakers" style="margin-bottom: 50px;">
+        <h3 style=" margin-top: 50px; font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #080808; ">SPEAKERS</h3>
         <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
 
         <div class="row mt-5">
@@ -193,7 +276,7 @@
                         <img class="speaker_img mb-3 img-fluid" src="img/team/profile 1.png" style="border-radius: 5px;" alt="">
                     </div>
                     <div class="performer_heading">
-                        <h4 class="mb-2">Mrs. Wilhelmina Asamoah</h4>
+                        <h4 class="mb-2" style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
                         <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important;">Chief Director of the Ministry of Energy</p>
                     </div>
                 </div>
@@ -204,7 +287,7 @@
                         <img class="speaker_img mb-3 img-fluid" src="img/team/profile 1.png" style="border-radius: 5px;" alt="">
                     </div>
                     <div class="performer_heading">
-                        <h4 class="mb-2">Mrs. Wilhelmina Asamoah</h4>
+                        <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
                         <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important;">Chief Director of the Ministry of Energy</p>
                     </div>
                 </div>
@@ -215,7 +298,7 @@
                         <img class="speaker_img mb-3 img-fluid" src="img/team/profile 1.png" style="border-radius: 5px;" alt="">
                     </div>
                     <div class="performer_heading">
-                        <h4 class="mb-2">Mrs. Wilhelmina Asamoah</h4>
+                        <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
                         <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important;">Chief Director of the Ministry of Energy</p>
                     </div>
                 </div>
@@ -226,7 +309,7 @@
                         <img class="speaker_img mb-3 img-fluid" src="img/team/profile 1.png" style="border-radius: 5px;" alt="">
                     </div>
                     <div class="performer_heading">
-                        <h4 class="mb-2">Mrs. Wilhelmina Asamoah</h4>
+                        <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
                         <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important;">Chief Director of the Ministry of Energy</p>
                     </div>
                 </div>
@@ -237,79 +320,509 @@
     </div>
 
  
-</section> -->
-<!-- <section>
+</section> 
+
+<section style="background: url(img/team/backteam.png); background-position: center; background-size: cover; background-attachment: fixed;  padding: 90px;">
+    <div class="text-center"></div>
+
+        <div class="container leaders" >
+            <h3 style=" margin-top: 50px; font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #ffffff; ">The Summit's Thought Leaders</h3>
+            <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
     
-    <div class="program_details_area  overlay2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-80  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-                        <h3 style="color: white;">Agenda</h3>
+            <div class="row mt-5">
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/gatetes.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2" style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="program_detail_wrap">
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class=" wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/1.png" alt="">
-                                </div>
-                                <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2  ">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/amandeep-singh-gill.jpg" style="border-radius: 5px;" alt="">
                         </div>
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/2.png" alt="">
-                                </div>
-                                <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
-                        </div>
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class=" wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb  wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/3.png" alt="">
-                                </div>
-                                <h4 class=" wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
-                        </div>
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/4.png" alt="">
-                                </div>
-                                <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
                         </div>
                     </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Doreen.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Fred-Swaniker ok_Sand Technology.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/gatetes.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2" style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/amandeep-singh-gill.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2 ">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Doreen.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Fred-Swaniker ok_Sand Technology.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Mrs. Wilhelmina Asamoah</h4>
+                            <p class="mb-2 mt-2" style="font-size: 15px; font-family: Helvetica, sans-serif; font-weight: lighter !important; color: rgb(182, 182, 182);">Chief Director of the Ministry of Energy</p>
+                        </div>
+                    </div>
+                </div>
+    
+              
+              </div>
+        </div>
+    </div>
+   
+
+ 
+</section> 
+ <section>
+
+
+    <div class="container mb-5">
+        <h3 style="margin-top: 50px; font-weight: 700; font-family: Helvetica, sans-serif; font-size: 40px; color: #080808;">Program Details</h3>
+        <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
+
+        <div class="tab-container mt-5">
+            
+            <ul class="nav nav-tabs" id="programTabs" role="tablist">
+                <style>
+                    .nav-item .nav-link.active {
+                       background: linear-gradient(to right, #63d96a, #0091ff);;
+                        color: #fff !important; /* Ensure text is visible */
+                      padding: 20px;
+                      padding-left: 50px;
+                      padding-right: 50px;
+                    
+
+                    }
+.nav-item .nav-link {
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    margin-right: 100px;
+  
+
+}
+.nav-item .nav-link:hover {
+    border: none !important;
+   
+}
+             .nav-tabs{
+                margin-bottom: 50px;
+                border: none !important;
+             }     
+
+            .nav-item .nav-item:hover {
+                transform: none !important;
+                transition: none !important;
+            }
+                 
+                </style>
+                <li class="nav-item">
+                    <a class="nav-link active" id="day1-tab" data-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">THURSDAY 30 MAY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="day2-tab" data-toggle="tab" href="#day2" role="tab" aria-controls="day2" aria-selected="false">FRIDAY 1 JUNE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="day3-tab" data-toggle="tab" href="#day3" role="tab" aria-controls="day3" aria-selected="false">FRIDAY 2 JUNE</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="programTabsContent">
+                
+                <div class="tab-pane fade show active" id="day1" role="tabpanel" aria-labelledby="day1-tab">
+                    <table style="width: 100%; margin-top: 30px; border-collapse: collapse; font-family: Helvetica, sans-serif;">
+                     
+                        <thead>
+                            <tr>
+                                <th class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">09.00 - 08.40</th>
+                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Welcome Coffee </h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">08.00 - 08.40</td>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4  " style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">08.00 - 08.40</td>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4  " style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">08.00 - 08.40</td>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4  " style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">08.00 - 08.40</td>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4  " style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="day1" role="tabpanel" aria-labelledby="day1-tab">
+                    <table style="width: 100%; margin-top: 30px; border-collapse: collapse; font-family: Helvetica, sans-serif;">
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">08.00 - 08.40</th>
+                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Welcome Coffee </h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">08.00 - 09.40</td>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4  " style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-left: none;">10.30 - 11.00</td>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-right: none;"><p>Break</p></td>
+                            </tr>
+                    
+                         
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
+                    <table style="width: 100%; margin-top: 30px; border-collapse: collapse; font-family: Helvetica, sans-serif;">
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">08.00 - 08.40</th>
+                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Welcome Coffee </h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">08.00 - 09.40</td>
+                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4  " style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-left: none;">10.30 - 11.00</td>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-right: none;"><p>Break</p></td>
+                            </tr>
+                    
+                         
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">
+                    <table style="width: 100%; margin-top: 30px; border-collapse: collapse; font-family: Helvetica, sans-serif;">
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;">08.00 - 08.40</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;">Welcome Coffee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-left: none;">09.00 - 08.40</td>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-left: none;">08.00 - 08.40</td>
+                                <td style="border: 1px solid #ddd; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
+                                    <h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Africa and the AI opportunity</h4>
+                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Home to the largest and fastest growing workforce in the world,
+                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
+                                        challenges and opportunities to advance inclusive and resilient growth.</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">MC</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Welcome remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Keynote
+                                        </h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Remarks</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
+                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Video</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
+                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Conversation with</h4>
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
+                                        
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
+                                      
+                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
+                                        
+                                
+                                
+                                </td>
+                            </tr>
+                    
+                     
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+      
     </div>
-</section> -->
+      
+    </div>
+    
+   
+</section> 
+<section>
+<footer style="background: url('img/footer_back.jpg') no-repeat center center/cover; padding: 50px 0; color: #fff;">
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center text-md-left">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="img/logo_2.png" alt="NEISA Logo" style="width: 100px;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #fff; font-size: 20px;">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #fff; font-size: 20px;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" style="margin: 0 10px; color: #fff; font-size: 20px;">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #fff; font-size: 20px;">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center text-md-right">
+                <p style="margin: 0; font-size: 14px;">&copy; 2025 NEISA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+</section>
     </mian>
 
    

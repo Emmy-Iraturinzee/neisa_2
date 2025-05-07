@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli:400,400i,500,500i,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli:400,400i,500,500i,600&display=swap");
+@import "tailwindcss";
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_extend.scss */
 .flex-center-start {
   display: -webkit-box;
@@ -455,12 +456,13 @@ h3 {
   }
 }
 
+
 /* line 343, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 #scrollUp {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  background: #FF4533;
+  background: #50a4ff;
   z-index: 99;
   width: 40px;
   height: 40px;
@@ -1159,14 +1161,16 @@ h3 {
 
 /* line 113, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area .buy_tkt .book_btn a:hover {
-  border-color: #FF4533;
-  color: #FF4533;
+  border-color: #50a4ff;
+  color: #50a4ff;
   background: transparent;
 }
 
 /* line 122, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu {
-  text-align: center;
+  text-align: right;
+
+  
 }
 
 /* line 126, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
@@ -1174,6 +1178,7 @@ h3 {
   display: inline-block;
   position: relative;
   margin: 0 20px;
+  text-align: right;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1193,14 +1198,15 @@ h3 {
 /* line 139, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a {
   color: #fff;
-  font-size: 20px;
+  font-size: 17px;
   text-transform: capitalize;
   font-weight: 400;
   display: inline-block;
   padding: 30px 0 30px  0;
-  font-family: "Anton", sans-serif;
+  font-family: "Helvetica", sans-serif;
   position: relative;
   text-transform: uppercase;
+  
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1240,7 +1246,7 @@ h3 {
 
 /* line 185, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a.active {
-  color: #FF4533;
+  color: #337aff;
 }
 
 /* line 187, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
@@ -1251,7 +1257,7 @@ h3 {
 
 /* line 192, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a:hover {
-  color: #FF4533;
+  color: #337aff;
 }
 
 /* line 196, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
@@ -1332,7 +1338,8 @@ h3 {
   -webkit-transition: transform 500ms ease, background 500ms ease;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
   padding: 0px 0px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.494);
+  backdrop-filter: blur(10px);
 }
 
 @media (max-width: 767px) {
@@ -1676,7 +1683,7 @@ h3 {
 }
 
 .slider_text{
-  margin-top: 140px;
+
 }
 
 /* line 65, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
@@ -1684,7 +1691,7 @@ h3 {
   
   font-size: 80px;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 100;
   color: #fff;
   line-height: 1;
   margin-top: 50px;
@@ -4877,6 +4884,7 @@ h6 {
   padding: 30px;
   margin-bottom: 30px;
 }
+
 
 /* line 664, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
 .blog_right_sidebar .single_sidebar_widget .btn_1 {
