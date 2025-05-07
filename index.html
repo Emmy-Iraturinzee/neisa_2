@@ -91,11 +91,27 @@
                                          
                                         </style> -->
                                         <ul id="navigation">
-                                            <li><a  href="index.html">home</a></li>
+                                            <li><a href="index.html" onclick="smoothScroll(event, 'index.html')">home</a></li>
+                                            <li><a class="btn-gradient" href="#about_us" onclick="smoothScroll(event, '#about_us')">About NEISA</a></li>
+                                            <li><a class="btn-gradient" href="#speakers" onclick="smoothScroll(event, '#speakers')">speakers</a></li>
+                                            <li><a href="#program" onclick="smoothScroll(event, '#program')">Program</a></li>
+                                            <script>
+                                                function smoothScroll(event, target) {
+                                                    event.preventDefault();
+                                                    const element = document.querySelector(target);
+                                                    if (element) {
+                                                        window.scrollTo({
+                                                            top: element.offsetTop,
+                                                            behavior: 'smooth'
+                                                        });
+                                                    }
+                                                }
+                                            </script>
+                                            <!-- <li><a  href="index.html">home</a></li>
                                             <li><a class="btn-gradient" href="#about_us">About NEISA</a></li>
                                             <li><a class="btn-gradient" href="#speakers">speakers</a></li>
                                      
-                                            <li><a href="">Program</a></li>
+                                            <li><a href="#program">Program</a></li> -->
 <!--                                             
                                             <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -428,7 +444,7 @@
 
  
 </section> 
- <section>
+ <section id="program">
 
 
     <div class="container mb-5">
