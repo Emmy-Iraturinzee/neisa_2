@@ -1610,9 +1610,22 @@ h3 {
   .img-logo{
     width: 50px !important;
   }
-
- 
+.slider_text h3 span{
+  font-size: 48px !important;
+  text-align: center !important;
 }
+  .slider_text p{
+    font-size: 20px !important;
+  }
+  .slider_text .p2{
+    font-size: 20px !important;
+  }
+  .slider_text span{
+    font-size: 20px !important;
+  }
+}
+ 
+
 
 
 
