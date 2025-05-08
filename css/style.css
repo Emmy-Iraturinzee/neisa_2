@@ -3389,6 +3389,10 @@ h6 {
   margin-right: 15px;
 }
 
+.delegate-count{
+  font-weight: 100!important;
+}
+
 /* line 404, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
 .progress-table .table-row .percentage .progress {
   width: 80%;
