@@ -2769,7 +2769,7 @@ h3 {
   }
  .media-body .hero-text{
     font-size: 40px !important;
-    margin-top: 180px !important;
+    margin-top: 240px !important;
      letter-spacing: px !important;
      text-align: left !important;
      width: 100% !important;
@@ -2778,7 +2778,7 @@ h3 {
    
   }
    .hero-img{
-    width: 85% !important;
+    width: 90% !important;
     position: absolute;
     margin-top: -10px;
     margin-left: -10px !important;
