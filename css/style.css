@@ -2778,9 +2778,10 @@ h3 {
    
   }
    .hero-img{
-    width: 90% !important;
+    width: 85% !important;
     position: absolute;
     margin-top: -10px;
+    margin-left: -10px !important;
   
    
     
@@ -2792,12 +2793,13 @@ h3 {
     margin-bottom: 100px !important;
    }
    .media-body p{
-    display: none !important;
+  font-weight: Light !important;
    }
 
    .second-sec h2{
     font-size: 20px !important;
     margin-top: -40px !important;
+    margin-left: -60px !important;
     
 
     
@@ -2808,8 +2810,8 @@ h3 {
     padding: 60px !important;
    }
    .second-sec .btn{
-    margin-top: 30px !important;
-   margin-left: -80px !important;
+    margin-top: 40px !important;
+   margin-left: -258px !important;
    position: absolute;
 
    margin-bottom: 100px;
