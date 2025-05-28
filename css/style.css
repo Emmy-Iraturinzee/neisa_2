@@ -2767,6 +2767,32 @@ h3 {
   .footer .copy-right_text .copy_right {
     font-size: 14px;
   }
+ .media-body .hero-text{
+    font-size: 40px !important;
+    margin-top: 50px !important;
+     letter-spacing: px !important;
+     text-align: left !important;
+
+   
+   
+  }
+   .hero-img{
+    width: 78% !important;
+    position: absolute;
+    margin-top: -150px;
+  
+   
+    
+   }
+   .slider_area{
+    height: 70vh !important;
+   }
+   .media-body{
+    margin-bottom: 100px !important;
+   }
+   .media-body p{
+    display: none !important;
+   }
 }
 
 /* line 45, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
@@ -2846,6 +2872,11 @@ h3 {
   font-size: 13px;
   background: transparent;
 }
+
+/* navbar2 test */
+
+
+
 
 /* line 69, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
 .form-contact .form-control:focus {
