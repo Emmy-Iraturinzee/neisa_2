@@ -2793,7 +2793,7 @@ h3 {
     margin-bottom: 100px !important;
    }
    .media-body p{
-  font-weight: Light !important;
+display: none !important;
    }
 
    .second-sec h2{
