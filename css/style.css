@@ -2769,29 +2769,50 @@ h3 {
   }
  .media-body .hero-text{
     font-size: 40px !important;
-    margin-top: 50px !important;
+    margin-top: 200px !important;
      letter-spacing: px !important;
      text-align: left !important;
+     width: 100% !important;
 
    
    
   }
    .hero-img{
-    width: 78% !important;
+    width: 90% !important;
     position: absolute;
-    margin-top: -150px;
+    margin-top: -10px;
   
    
     
    }
    .slider_area{
-    height: 70vh !important;
+    height: 80vh !important;
    }
    .media-body{
     margin-bottom: 100px !important;
    }
    .media-body p{
     display: none !important;
+   }
+
+   .second-sec h2{
+    font-size: 20px !important;
+    margin-top: -40px !important;
+    
+
+    
+
+   }
+
+   .second-sec{
+    padding: 60px !important;
+   }
+   .second-sec .btn{
+    margin-top: 30px !important;
+   margin-left: -80px !important;
+   position: absolute;
+
+   margin-bottom: 100px;
    }
 }
 
