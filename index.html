@@ -69,7 +69,7 @@
                     <div class="header_bottom_border">
  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
       <!-- <a class="navbar-brand" href="#"><img src="img/ANES.png" style="width: 10px;"></a> -->
-    <!-- <a class="navbar-brand" href="#"><img src="img/ANES.png" style="width: 120px;"></a> -->
+    <!-- <a class="navbar-brand" href="#"><img src="img/anes-logo.png" style="width: 40px;"></a> -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Smooth scroll for .nav-link
@@ -116,6 +116,8 @@
         }
     }
     `;
+    // Mobile navbar background: visible dark, blur
+ 
     document.head.appendChild(style);
     // Sidebar menu for mobile
     document.addEventListener('DOMContentLoaded', function () {
@@ -331,10 +333,7 @@
 </section>
 
 <section  >
-
-</section>
-<section id="about" style="margin-bottom: 100px;">
-    <div class=" about" style="position: relative; overflow: hidden;">
+<div class=" about" style="position: relative; overflow: hidden;">
         <div class="container">
             <h3 style=" margin-top: 70px; font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #080808; ">About the Summit</h3>
             <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
@@ -361,6 +360,9 @@
          </div>
        
     </div>
+</section>
+<section id="about" style="margin-bottom: 100px;">
+    
 </section>
 <section id="" style="background-color: #003047; padding: 50px;">
     <div class=" about" style="position: relative;">
@@ -878,6 +880,7 @@ Learn from leading global experts and innovators on the potential and applicatio
     background: linear-gradient(to right, #63d96a, #0091ff);
     color: #fff !important;
     font-weight: 900;
+    width: 100%;
 }
 .fullwidth-tabs .nav-link:focus {
     outline: none;
@@ -903,7 +906,7 @@ Learn from leading global experts and innovators on the potential and applicatio
 <div class="container fullwidth-tabs mb-5 mt-5">
             <h3  class="mb-5" style="margin-top: 100px; font-weight: 700; font-family: Helvetica, sans-serif; font-size: 40px; color: #080808;">The Agenda</h3>
 
-    <ul class="nav nav-tabs" id="agendaTabs" role="tablist">
+    <ul class="nav nav-tabs wow fadeInDown" id="agendaTabs" role="tablist" data-wow-duration="1s" data-wow-delay=".1s" >
         <li class="nav-item">
             <a class="nav-link active" id="agenda-day1-tab" data-toggle="tab" href="#agenda-day1" role="tab" aria-controls="agenda-day1" aria-selected="true">
                 Day 1 | 30 June 2025
@@ -917,7 +920,7 @@ Learn from leading global experts and innovators on the potential and applicatio
     </ul>
     <div class="tab-content" id="agendaTabsContent">
         <div class="tab-pane fade show active" id="agenda-day1" role="tabpanel" aria-labelledby="agenda-day1-tab">
-            <table style="width:100%; border-collapse:collapse; font-family:Helvetica, sans-serif;">
+            <table class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s" style="width:100%; border-collapse:collapse; font-family:Helvetica, sans-serif;">
                 <tr>
                     <td style=" color:#0091ff; ">09:00</td>
                     <td style="padding:20px 50px; border:none;">
