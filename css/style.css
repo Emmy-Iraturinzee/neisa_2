@@ -2944,8 +2944,8 @@ footer {
     background-attachment:scroll !important;
   }
  .media-body .hero-text{
-    font-size: 40px !important;
-    margin-top: 240px !important;
+    font-size: 38px !important;
+    margin-top: 220px !important;
      letter-spacing: px !important;
      text-align: left !important;
      width: 100% !important;
@@ -3030,7 +3030,7 @@ margin-top: 30px !important;
    }
    .media-body p{
     margin-top: 10px !important;
-    font-size: 18px !important;
+    font-size: 17px !important;
     font-weight: lighter;
    }
    .apply-sec{
