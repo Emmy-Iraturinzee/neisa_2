@@ -2969,7 +2969,8 @@ footer {
     margin-bottom: 100px !important;
    }
    .media-body p{
-margin-top: 30px !;
+margin-top: 30px !important;
+    
    }
 
    .second-sec h2{
@@ -3015,11 +3016,13 @@ margin-top: 30px !;
    }
 
 }
+/* adjust Hero section here!!!!!!!!!!!!!!!!! */
+
 @media (max-width:767px){
    .hero-img{
     width: 90% !important;
     position: absolute;
-    margin-top: 20px !important;
+    margin-top: 50px !important;
     margin-left: -10px !important;
   
    
