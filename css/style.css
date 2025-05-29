@@ -2999,7 +2999,7 @@ footer {
 /* pixel phone */
 @media only screen and (min-width: 412px){
   .hero-text{
-    margin-top: 200px !important;
+    margin-top: 300px !important;
   }
 }
 
