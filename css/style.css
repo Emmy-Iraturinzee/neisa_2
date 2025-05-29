@@ -3016,7 +3016,38 @@ display: none !important;
    }
 }
 
+       .nav-item .nav-link.active {
+                       background: linear-gradient(to right, #63d96a, #0091ff);;
+                        color: #fff !important; /* Ensure text is visible */
+                      padding: 20px;
+                      padding-left: 50px;
+                      padding-right: 50px;
+                   
+                    
 
+                    }
+.nav-item .nav-link {
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    margin-right: 100px;
+  
+
+}
+.nav-item .nav-link:hover {
+    border: none !important;
+   
+}
+             .nav-tabs{
+                margin-bottom: 50px;
+                border: none !important;
+             }     
+
+            .nav-item .nav-item:hover {
+                transform: none !important;
+                transition: none !important;
+            }
+                 
 /* line 45, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right a {
   color: #FF4533;

@@ -69,15 +69,70 @@
                     <div class="header_bottom_border">
  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
       <!-- <a class="navbar-brand" href="#"><img src="img/ANES.png" style="width: 10px;"></a> -->
+    <!-- <a class="navbar-brand" href="#"><img src="img/ANES.png" style="width: 120px;"></a> -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Smooth scroll for .nav-link
+        document.querySelectorAll('.nav-link[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                const hash = this.getAttribute('href');
+                if (hash.length > 1 && document.querySelector(hash)) {
+                    e.preventDefault();
+                    document.querySelector(hash).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Update active class
+                    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(nav) {
+                        nav.classList.remove('active-nav');
+                    });
+                    this.classList.add('active-nav');
+                }
+            });
+        });
 
+        // Set active on scroll
+        const sections = Array.from(document.querySelectorAll('section[id]'));
+        window.addEventListener('scroll', function() {
+            let scrollPos = window.scrollY || document.documentElement.scrollTop;
+            let found = false;
+            sections.forEach(function(section) {
+                if (!found && section.offsetTop - 80 <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(nav) {
+                        nav.classList.remove('active-nav');
+                        if (nav.getAttribute('href') === '#' + section.id) {
+                            nav.classList.add('active-nav');
+                        }
+                    });
+                    found = true;
+                }
+            });
+        });
+    });
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+    @media (max-width: 767px) {
+        .navbar-nav .nav-link.active-nav,
+        .navbar-nav .nav-item.active .nav-link {
+            border-bottom: none !important;
+        }
+    }
+    `;
+    document.head.appendChild(style);
+    </script>
+    <style>
+    .navbar-nav .nav-link.active-nav,
+    .navbar-nav .nav-item.active .nav-link {
+        border-bottom: 3px solid #0091ff;
+        color: #0091ff !important;
+    }
+    </style>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link " href="#home">Home <span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item" >
         <a class="nav-link" href="#about">About</a>
@@ -109,7 +164,7 @@
 
     <mian>
         
-<section>
+<section id="home">
    
 
   
@@ -691,294 +746,223 @@ Learn from leading global experts and innovators on the potential and applicatio
 
  <section id="agenda"  >
 
-
-    <div class="container mb-5">
-        <h3  style="margin-top: 50px; font-weight: 700; font-family: Helvetica, sans-serif; font-size: 40px; color: #080808;">The Agenda</h3>
-        <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
-
-        <div class="tab-container mt-5">
-            
-            <ul class="nav nav-tabs " id="programTabs" role="tablist">
-                <style>
-                    .nav-item .nav-link.active {
-                       background: linear-gradient(to right, #63d96a, #0091ff);;
-                        color: #fff !important; /* Ensure text is visible */
-                      padding: 20px;
-                      padding-left: 50px;
-                      padding-right: 50px;
-                   
-                    
-
-                    }
-.nav-item .nav-link {
-    font-size: 20px;
+<style>
+.fullwidth-tabs {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.fullwidth-tabs .nav-tabs {
+    display: flex;
+    border: none;
+    width: 100%;
+    justify-content: space-between;
+    background: #f5faff;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+.fullwidth-tabs .nav-item {
+    flex: 1 1 0;
+    text-align: center;
+}
+.fullwidth-tabs .nav-link {
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: #003047;
+    font-size: 22px;
     font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    padding: 24px 0;
+    transition: background 0.2s, color 0.2s;
+}
+.fullwidth-tabs .nav-link.active {
+    background: linear-gradient(to right, #63d96a, #0091ff);
+    color: #fff !important;
     font-weight: 900;
-    margin-right: 100px;
-  
-
 }
-.nav-item .nav-link:hover {
-    border: none !important;
-   
+.fullwidth-tabs .nav-link:focus {
+    outline: none;
 }
-             .nav-tabs{
-                margin-bottom: 50px;
-                border: none !important;
-             }     
+.fullwidth-tabs .tab-content {
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 24px rgba(0,145,255,0.07);
+    padding: 40px 30px 30px 30px;
+    font-family: Helvetica, sans-serif;
+}
+@media (max-width: 767px) {
+    .fullwidth-tabs .nav-link {
+        font-size: 16px;
+        padding: 14px 0;
+    }
+    .fullwidth-tabs .tab-content {
+        padding: 20px 5px 15px 5px;
+    }
+}
+</style>
 
-            .nav-item .nav-item:hover {
-                transform: none !important;
-                transition: none !important;
-            }
-                 
-                </style>
-              
-                <li class="nav-item">
-                    <a class="nav-link active" id="day1-tab" data-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">Day 1 | 30 June 2025</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="day2-tab" data-toggle="tab" href="#day2" role="tab" aria-controls="day2" aria-selected="false">Day 2 | 1 May 2025</a>
-                </li>
-            
-            </ul>
-            <div class="tab-content" id="programTabsContent">
-                
-                <div class="tab-pane fade show active" id="day1" role="tabpanel" aria-labelledby="day1-tab">
-                    <table style="width: 100%; margin-top: 30px; border-collapse: collapse; font-family: Helvetica, sans-serif;">
+<div class="container fullwidth-tabs mb-5 mt-5">
+            <h3  class="mb-5" style="margin-top: 100px; font-weight: 700; font-family: Helvetica, sans-serif; font-size: 40px; color: #080808;">The Agenda</h3>
+
+    <ul class="nav nav-tabs" id="agendaTabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="agenda-day1-tab" data-toggle="tab" href="#agenda-day1" role="tab" aria-controls="agenda-day1" aria-selected="true">
+                Day 1 | 30 June 2025
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="agenda-day2-tab" data-toggle="tab" href="#agenda-day2" role="tab" aria-controls="agenda-day2" aria-selected="false">
+                Day 2 | 1 July 2025
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content" id="agendaTabsContent">
+        <div class="tab-pane fade show active" id="agenda-day1" role="tabpanel" aria-labelledby="agenda-day1-tab">
+            <table style="width:100%; border-collapse:collapse; font-family:Helvetica, sans-serif;">
+                <tr>
+                    <td style=" color:#0091ff; ">09:00</td>
+                    <td style="padding:20px 50px; border:none;">
+                        <h4 style="margin:0; color:#63d96a; font-family:Helvetica, sans-serif;  font-size: 22px;">Arrivals, Coffee, Networking & Exhibition Tours</h4>
                      
-                        <thead>
-                            <tr>
-                                <th class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">09.00 </th>
-                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 style="font-family:  Helvetica, sans-serif; font-weight: bolder; color: #63d96a;">Arrivals, Coffee, Networking & Exhibition Tours</h4></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">10:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</p>
-                    
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Remarks & Keynotes
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#0091ff; ">10:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Opening Ceremony</h4>
+                        <p style="margin:0;">Remarks & Keynotes Spotlight: Africa’s Energy Imperative by Dr L Zerbo, Chairman, Rwanda Atomic Energy Board High level panel | Global Nuclear Leadership</p>
+                    </td>
+                </tr>
+              <tr>
+                    <td style="color:#0091ff; ">11:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Safe, Secure and Peaceful Use of Nuclear Technologies</h4>
+                        <p style="margin:0;">This session explores how African countries can ensure the safe, secure, and peaceful use of nuclear technologies. Experts will discuss regulatory frameworks, security measures, and international cooperation to build public trust and support sustainable, non-proliferative nuclear development across the continent</p>
+                    </td>
+                </tr>
+                  <tr>
+                    <td style="color:#0091ff; ">12:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Ministerial Panel: Contextualizing Africa Energy Needs and Securing Political Commitment</h4>
+                   <p style="margin:0;">This high-level ministerial panel will explore Africa’s evolving energy landscape and the role of nuclear innovation in meeting demand. Leaders will discuss national priorities, regional cooperation, and the political commitment needed to integrate SMRs and MMRs into Africa’s sustainable energy futur</p>
 
-Spotlight: Africa’s Energy Imperative by Dr L Zerbo, Chairman, Rwanda Atomic Energy Board
-
-High level panel | Global Nuclear Leadership</p>
-      
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                
-                            <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">11:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Safe, Secure and Peaceful Use of Nuclear Technologies</p>
-                            
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">This session explores how African countries can ensure the safe, secure, and peaceful use of nuclear technologies. Experts will discuss regulatory frameworks, security measures, and international cooperation to build public trust and support sustainable, non-proliferative nuclear development across the continent</p>
-       
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">12:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Ministerial Panel: Contextualizing Africa Energy Needs and Securing Political Commitment</p>
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">This high-level ministerial panel will explore Africa’s evolving energy landscape and the role of nuclear innovation in meeting demand. Leaders will discuss national priorities, regional cooperation, and the political commitment needed to integrate SMRs and MMRs into Africa’s sustainable energy futur</p>
-
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                              <tr>
-                                <th class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">13:00 - 14:00 </th>
-                                <th style="border: 1px solid #0fbdf3; padding: 20px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 class="text-center" style="font-family:  Helvetica, sans-serif; font-weight: bolder; color: #63d96a;">LUNCH</h4></th>
-                            </tr>
-                               <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">14:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Insights in Nuclear Deployment</p>
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">In this session, leading experts will share real-world insights, case studies, and lessons learned from nuclear deployment efforts globally and in emerging markets. Presentations will highlight the practical realities of planning, financing, building, and operating nuclear energy systems—including Small Modular and Micro Reactors. Attendees will gain valuable perspectives on timelines, partnerships, regulatory readiness, and localized solutions relevant to Africa’s unique energy needs.</p>
-
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                                 <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">14:45</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Experts Panel: Opportunities and Challenges of Nuclear Energy Adoption</p>
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">In this session, leading experts will share real-world insights, case studies, and lessons learned from nuclear deployment efforts globally and in emerging markets. Presentations will highlight the practical realities of planning, financing, building, and operating nuclear energy systems—including Small Modular and Micro Reactors. Attendees will gain valuable perspectives on timelines, partnerships, regulatory readiness, and localized solutions relevant to Africa’s unique energy needs.</p>
-
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                                 <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">15:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 20px; border-right: none; "><h4 class="prog_title break-colum text-center" style="font-family: Helvetica, sans-serif; font-weight: bolder; color: #63d96a;">BREAK</p>
-
-                                </td>
-                            </tr>
-                                 <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">15:45</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Mobilizing Capital Investment</p>
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Financing remains a major hurdle in advancing nuclear energy projects across Africa. This session will explore innovative financing models, risk mitigation strategies, and the role of public-private partnerships in unlocking capital for nuclear deployment. Experts from development banks, investment firms, and government agencies will share approaches to attract sustainable funding and ensure bankable nuclear energy projects that align with Africa’s development priorities.</p>
-
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                               <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">16:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 20px; border-right: none; "><h4 class="prog_title  text-center" style="font-family:  Helvetica, sans-serif; font-weight: bolder; color: #63d96a;">Power Hour: B2B Meetings, Networking, Exhibition tours</p>
-
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="tab-pane fade" id="day1" role="tabpanel" aria-labelledby="day1-tab">
-                    <table style="width: 100%; margin-top: 30px; border-collapse: collapse; font-family: Helvetica, sans-serif;">
-                        <thead>
-                            <tr>
-                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">08.00 - 08.40</th>
-                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Welcome Coffee </h4></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">08.00 - 09.40</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Opening Ceremony</h4>
-                                    <h4 class="prog_title mb-4  " style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Africa and the AI opportunity</h4>
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Home to the largest and fastest growing workforce in the world,
-                                        Africa is poised to play a consequential role in the global AI ecosystem. This session will set the scene for the two-day summit exploring
-                                        challenges and opportunities to advance inclusive and resilient growth.</p>
-                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">MC</h4>
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Zain Verjee, Founder & CEO, theZVG</p>
-                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Welcome remarks</h4>
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Crystal Rugege, Managing Director, Rwanda Centre for the Fourth Industrial Revolution</p>
-                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Keynote
-                                        </h4>
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">H.E. Ms. Lerato Mataboge , Commissioner for Infrastructure & Energy, Africa Union Commission</p>
-                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Remarks</h4>
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Bill Gates, Chair, Gates Foundation & Founder, Breakthrough Energy</p>
-                                        <h4 class="prog_title mb-1" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Video</h4>
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;">Welcome to GAIS Africa 2025</p>
-                                        <h4 class="prog_title mb-2" style="font-family:  Helvetica, sans-serif; font-weight: bolder;  color:#0091ff ;">Conversation with</h4>
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>H.E. Wamkele Mene</strong>, Secretary General, African Continental Free Trade Area</p>
-                                        
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Paula Ingabire</strong> , Minister, ICT & Innovation, Rwanda</p>
-                                      
-                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"><strong>Bosun Tijani</strong> , Minister, Communications, Innovation & Digital Economy, Nigeria</p>
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #ddd; padding: 10px; border-left: none;">10.30 - 11.00</td>
-                                <td style="border: 1px solid #ddd; padding: 10px; border-right: none;"><p>Break</p></td>
-                            </tr>
-                    
-                         
-                        </tbody>
-                    </table>
-                </div>
-                <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
-                    <table style="width: 100%; margin-top: 30px; border-collapse: collapse; font-family: Helvetica, sans-serif;">
-                     
-                        <thead>
-                            <tr>
-                                <th class="" data-wow-duration="1s" data-wow-delay=".3s" style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">09.00 </th>
-                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 style="font-family:  Helvetica, sans-serif; font-weight: bolder; color: #63d96a;">Arrivals, Coffee, Networking & Exhibition Tours</h4></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">10:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Spotlight: Addressing safety & environmental concerns</p>
-                    
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Public confidence in nuclear energy hinges on robust safety measures and responsible environmental stewardship. This session will examine how African nations can adopt international best practices to ensure the safe development and operation of nuclear technologies. Experts will discuss safety regulations, environmental impact assessments, waste management, and emergency preparedness—emphasizing transparency, community engagement, and long-term sustainability.p</p>
-      
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                
-                            <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">10:15</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Spotlight: Innovations Powering the Future</p>
-                            
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">This session will spotlight breakthrough innovations in Small Modular Reactors (SMRs) and their transformative potential for Africa’s energy landscape. Industry leaders and technology developers will present the latest advancements in SMR design, deployment, and scalability. Discussions will highlight how these innovations can provide reliable, flexible, and low-carbon energy solutions tailored to Africa’s growing and decentralized energy needs.</p>
-       
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">10:45</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Infrastructure Readiness for SMRs and Micro Reactors in Africa</p>
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">The successful deployment of Small Modular and Micro Reactors depends on more than technology—it requires robust supporting infrastructure. This session will assess Africa’s current infrastructure landscape and identify critical gaps in grid capacity, transportation, water access, and skilled workforce development. Experts will explore what it takes to create enabling conditions for SMR/MMR rollout, including integrated planning, cross-sector coordination, and investment in local capabilities.</p>
-
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                              <tr>
-                                <th class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="border: 1px solid #0fbdf3; padding: 10px; text-align: left;  width: 120px; border-left: none; border-top: none;font-weight: lighter;">12:00 </th>
-                                <th style="border: 1px solid #0fbdf3; padding: 10px; text-align: left; border-left: none; border-top: none; border-right: none;"><h4 class="" style="font-family:  Helvetica, sans-serif; font-weight: bolder; ">Spotlight: Women Championing Nuclear Energy Implementation in Africa</h4>
-                                 <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">From engineering and policy to advocacy and education, female leaders are shaping the continent’s nuclear future. Panelists will share their journeys, challenges, and impact—while discussing strategies to increase gender inclusion, mentorship, and leadership in the nuclear sector. The session aims to amplify women's voices and accelerate a more diverse and equitable energy transition.</p>
-
-                                </th>
-                            </tr>
-                               <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">13:00 - 14:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 5px; border-right: none; "><h4 class="prog_title mb-4 text-center" style="font-family:  Helvetica, sans-serif; font-weight: bolder; color: #63d96a;">LUNCH</p>
-
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                                 <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">14:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4" style="font-family:  Helvetica, sans-serif; font-weight: bolder;">Powering Potential: Youth & the Nuclear Energy Transition</p>
-                                    <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">Africa’s energy future depends on the vision, skills, and leadership of its youth. This session will spotlight young professionals, students, and emerging leaders who are shaping the future of nuclear science and technology. Discussions will focus on education pathways, mentorship, career development, and youth-led innovation. The session aims to inspire investment in youth capacity building and foster a new generation of nuclear champions across the continent.</p>
-
-                                        
-                                
-                                
-                                </td>
-                            </tr>
-                                 <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">15:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4 text-center" style="font-family:  Helvetica, sans-serif; font-weight: bolder; ">Accelerating Nuclear Regulation in a Rapidly Changing World</p>
-                                                                        <p style="font-family:Helvetica, sans-serif; font-weight: lighter;"data-wow-duration="1s" data-wow-delay=".3s">As nuclear technologies evolve and deployment timelines shorten, regulatory systems must adapt to keep pace. This session will explore how African countries can modernize nuclear regulatory frameworks to support innovation while maintaining safety and public trust. Discussions will cover agile licensing processes, regional collaboration, regulatory capacity building, and the role of international standards in enabling timely and responsible nuclear energy development across the continent.</p>
-
-
-                                </td>
-                            </tr>
-                           
-                               <tr>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-left: none; font-weight: lighter;">16:00</td>
-                                <td style="border: 1px solid #0fbdf3; padding: 10px; border-right: none; "><h4 class="prog_title mb-4 text-center" style="font-family:  Helvetica, sans-serif; font-weight: bolder; color: #63d96a;">Closing Ceremony</p>
-
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            
-            </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="color:#0091ff; ">13:00 - 14:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px; color:#63d96a;">LUNCH</h4>
+    
+                    </td>
+                </tr>
+               <tr>
+                    <td style="color:#0091ff; ">14:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Insights in Nuclear Deployment</h4>
+                        <p style="margin:0;">In this session, leading experts will share real-world insights, case studies, and lessons learned from nuclear deployment efforts globally and in emerging markets. Presentations will highlight the practical realities of planning, financing, building, and operating nuclear energy systems—including Small Modular and Micro Reactors. Attendees will gain valuable perspectives on timelines, partnerships, regulatory readiness, and localized solutions relevant to Africa’s unique energy needs.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#0091ff; ">15:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px; color:#63d96a;">BREAK</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#0091ff; ">15:45</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Mobilizing Capital Investment</h4>
+                        <p style="margin:0;">Financing remains a major hurdle in advancing nuclear energy projects across Africa. This session will explore innovative financing models, risk mitigation strategies, and the role of public-private partnerships in unlocking capital for nuclear deployment. Experts from development banks, investment firms, and government agencies will share approaches to attract sustainable funding and ensure bankable nuclear energy projects that align with Africa’s development priorities.</p>
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="color:#0091ff; ">16:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px; color: #63d96a; ">Power Hour: B2B Meetings, Networking, Exhibition tours</h4>
+                    </td>
+                </tr>
+            </table>
         </div>
-      
+        <div class="tab-pane fade" id="agenda-day2" role="tabpanel" aria-labelledby="agenda-day2-tab">
+            <table style="width:100%; border-collapse:collapse; font-family:Helvetica, sans-serif;">
+                <tr>
+                    <td style=" color:#0091ff; ">09:00</td>
+                    <td style="padding:20px 50px; border:none;">
+                        <h4 style="margin:0; color:#63d96a; font-family:Helvetica, sans-serif;  font-size: 22px;">Arrivals, Coffee, Networking & Exhibition Tours</h4>
+                     
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#0091ff; ">10:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Spotlight: Addressing safety & environmental concerns</h4>
+                        <p style="margin:0;">Public confidence in nuclear energy hinges on robust safety measures and responsible environmental stewardship. This session will examine how African nations can adopt international best practices to ensure the safe development and operation of nuclear technologies. Experts will discuss safety regulations, environmental impact assessments, waste management, and emergency preparedness—emphasizing transparency, community engagement, and long-term sustainability.</p>
+                    </td>
+                </tr>
+              <tr>
+                    <td style="color:#0091ff; ">10:15</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Spotlight: Innovations Powering the Future</h4>
+                        <p style="margin:0;">This session will spotlight breakthrough innovations in Small Modular Reactors (SMRs) and their transformative potential for Africa’s energy landscape. Industry leaders and technology developers will present the latest advancements in SMR design, deployment, and scalability. Discussions will highlight how these innovations can provide reliable, flexible, and low-carbon energy solutions tailored to Africa’s growing and decentralized energy needs</p>
+                    </td>
+                </tr>
+                  <tr>
+                    <td style="color:#0091ff; ">10:45</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Infrastructure Readiness for SMRs and Micro Reactors in Africa</h4>
+                   <p style="margin:0;">The successful deployment of Small Modular and Micro Reactors depends on more than technology—it requires robust supporting infrastructure. This session will assess Africa’s current infrastructure landscape and identify critical gaps in grid capacity, transportation, water access, and skilled workforce development. Experts will explore what it takes to create enabling conditions for SMR/MMR rollout, including integrated planning, cross-sector coordination, and investment in local capabilities</p>
+
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="color:#0091ff; ">12:00 </td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Spotlight: Women Championing Nuclear Energy Implementation in Africa</h4>
+                     <p style="margin:0;">From engineering and policy to advocacy and education, female leaders are shaping the continent’s nuclear future. Panelists will share their journeys, challenges, and impact—while discussing strategies to increase gender inclusion, mentorship, and leadership in the nuclear sector. The session aims to amplify women's voices and accelerate a more diverse and equitable energy transition.</p>
+
+    
+                    </td>
+                </tr>
+               <tr>
+                    <td style="color:#0091ff; ">13:00 - 14:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px; color:#63d96a">LUNCH</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#0091ff; ">14:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px; ">Powering Potential: Youth & the Nuclear Energy Transition</h4>
+                                             <p style="margin:0;">Africa’s energy future depends on the vision, skills, and leadership of its youth. This session will spotlight young professionals, students, and emerging leaders who are shaping the future of nuclear science and technology. Discussions will focus on education pathways, mentorship, career development, and youth-led innovation. The session aims to inspire investment in youth capacity building and foster a new generation of nuclear champions across the continent..</p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#0091ff; ">15:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px;">Accelerating Nuclear Regulation in a Rapidly Changing World</h4>
+                        <p style="margin:0;">As nuclear technologies evolve and deployment timelines shorten, regulatory systems must adapt to keep pace. This session will explore how African countries can modernize nuclear regulatory frameworks to support innovation while maintaining safety and public trust. Discussions will cover agile licensing processes, regional collaboration, regulatory capacity building, and the role of international standards in enabling timely and responsible nuclear energy development across the continent.</p>
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="color:#0091ff; ">16:00</td>
+                   <td style="padding:20px 50px; border:none;">
+                        <h4 class="mb-2" style="margin:0; font-family:Helvetica, sans-serif; font-size: 20px; color: #63d96a; ">Closing Ceremony</h4>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
+</div>
+<script>
+$(function() {
+    $('#agendaTabs a').on('click', function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+});
+</script>
+
       
     </div>
     
