@@ -2934,6 +2934,13 @@ footer {
    font-family:"helvetica", sans-serif;
 }
 
+@media(width:442px){
+  .hero-img{
+    width: 20% !important;
+  }
+  }
+
+
 @media (max-width: 767px) {
   /* line 36, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
   .footer .copy-right_text .copy_right {
@@ -2943,95 +2950,38 @@ footer {
   .slider_area{
     background-attachment:scroll !important;
   }
- .media-body .hero-text{
-    font-size: 38px !important;
-    margin-top: 220px !important;
-     letter-spacing: px !important;
-     text-align: left !important;
-     width: 100% !important;
-
-   
-   
-  }
-   .hero-img{
-    width: 90% !important;
-    position: absolute;
-    margin-top: 30px !important;
-    margin-left: -10px !important;
+ 
   
-   
-    
-   }
    .slider_area{
     height: 80vh !important;
    }
-   .media-body{
-    margin-bottom: 100px !important;
-   }
-   .media-body p{
-margin-top: 30px !important;
-    
-   }
-
-   .second-sec h2{
-    font-size: 20px !important;
-    margin-top: -40px !important;
-    margin-left: -60px !important;
-    
-
-    
-
-   }
-
-   .second-sec{
-    padding: 60px !important;
-   }
-   .second-sec .btn{
-    margin-top: 40px !important;
-   margin-left: -258px !important;
-   position: absolute;
-
-   margin-bottom: 100px;
-   }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-   .media-body .hero-text{
-    font-size: 40px !important;
-    margin-top: 240px !important;
-     letter-spacing: px !important;
-     text-align: left !important;
-     width: 100% !important;
-
-   
-   
-  }
-   .hero-img{
-    width: 50% !important;
-    position: absolute;
-    margin-top: -20px !important;
-    margin-left: -30px !important;
   
    
-    
-   }
-
+  
 }
+
 /* adjust Hero section here!!!!!!!!!!!!!!!!! */
 
 @media (max-width:767px){
    .hero-img{
-    width: 90% !important;
+    width: 50vh !important;
     position: absolute;
-    margin-top: 50px !important;
+    margin-top: 10px !important;
     margin-left: -10px !important;
+    
   
    
     
    }
+   .hero-text{
+    margin-top: 200px !important;
+    font-size: 5vh !important;
+   
+   }
    .media-body p{
     margin-top: 10px !important;
-    font-size: 17px !important;
-    font-weight: lighter;
+    font-size: 16px !important;
+    font-weight: normal !important;
    }
    .apply-sec{
     margin-top: 30px !important;
