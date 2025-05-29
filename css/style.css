@@ -2996,6 +2996,12 @@ footer {
    }
 
 }
+/* pixel phone */
+@media only screen and (min-width: 412px){
+  .hero-text{
+    margin-top: 200px !important;
+  }
+}
 
        .nav-item .nav-link.active {
                        background: linear-gradient(to right, #63d96a, #0091ff);;
