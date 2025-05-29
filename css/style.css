@@ -3006,7 +3006,7 @@ display: none !important;
 }
 @media (max-width:767px){
    .hero-img{
-    width: 95% !important;
+    width: 90% !important;
     position: absolute;
     margin-top: 20px !important;
     margin-left: -10px !important;
