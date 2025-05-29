@@ -3001,6 +3001,9 @@ footer {
   .hero-text{
     margin-top: 300px !important;
   }
+  .hero-img{
+    margin-top: 100px !important;
+  }
 }
 
        .nav-item .nav-link.active {
