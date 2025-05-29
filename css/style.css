@@ -2966,7 +2966,7 @@ footer {
    .hero-img{
     width: 50vh !important;
     position: absolute;
-    margin-top: 10px !important;
+    margin-top: -40px !important;
     margin-left: -10px !important;
     
   
@@ -2986,6 +2986,14 @@ footer {
    .apply-sec{
     margin-top: 30px !important;
    }
+}
+@media (max-width: 769px) and (min-width: 990px){
+
+    .hero-text{
+  display: none !important;
+   
+   }
+
 }
 
        .nav-item .nav-link.active {
