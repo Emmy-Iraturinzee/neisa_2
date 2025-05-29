@@ -2932,6 +2932,10 @@ footer {
   .footer .copy-right_text .copy_right {
     font-size: 14px;
   }
+
+  .slider_area{
+    background-attachment:scroll !important;
+  }
  .media-body .hero-text{
     font-size: 40px !important;
     margin-top: 240px !important;
