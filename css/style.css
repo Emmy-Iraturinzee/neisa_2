@@ -2883,6 +2883,9 @@ footer {
   padding-top: 148px;
   padding-bottom: 140px;
 }
+.navbar-brand{
+  display: none;
+}
 
 @media (max-width: 767px) {
   /* line 9, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
@@ -2890,6 +2893,10 @@ footer {
     padding-top: 60px;
     padding-bottom: 30px;
   }
+  .navbar-brand{
+  display: inline-block;
+}
+
 }
 
 /* line 17, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
@@ -2937,11 +2944,11 @@ footer {
     background-attachment:scroll !important;
   }
  .media-body .hero-text{
-    font-size: 40px !important;
+    font-size: 48px !important;
     margin-top: 240px !important;
      letter-spacing: px !important;
      text-align: left !important;
-     width: 100% !important;
+     width: 107% !important;
 
    
    
