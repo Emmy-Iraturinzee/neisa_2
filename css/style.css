@@ -3003,6 +3003,7 @@ footer {
   }
   .hero-img{
     margin-top: 80px !important;
+    width: 45vh !important;
   }
 }
 
