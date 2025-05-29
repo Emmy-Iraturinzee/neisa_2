@@ -7,7 +7,7 @@
 /* Large Mobile :480px. */
 /* line 6, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 body {
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -75,17 +75,17 @@ h6 a {
 
 /* line 64, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 a {
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 /* line 67, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 input::placeholder {
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 /* line 70, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 textarea::placeholder {
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 /* line 73, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
@@ -107,7 +107,7 @@ p {
   margin-bottom: 0;
   font-weight: 400;
   margin-bottom: 0px;
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 /* line 90, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */

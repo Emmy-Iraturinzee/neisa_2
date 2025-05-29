@@ -27,7 +27,7 @@
 /* Large Mobile :480px. */
 /* line 6, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "helvetica", sans-serif;
 
   font-weight: normal;
   font-style: normal;
@@ -86,7 +86,7 @@ button {
 
 /* line 52, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 h1, h2, h3, h4, h5 {
-  font-family: "Anton", sans-serif;
+    font-family: "helvetica", sans-serif;
   color: #001D38;
 }
 
@@ -102,17 +102,17 @@ h6 a {
 
 /* line 64, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 a {
-  font-family: "Muli", sans-serif;
+  font-family:"helvetica", sans-serif;
 }
 
 /* line 67, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 input::placeholder {
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 /* line 70, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
 textarea::placeholder {
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 /* line 73, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
@@ -448,7 +448,7 @@ footer {
 
 .f-logo {
     color: #FFFFFF;
-    font-family: 'Turret Road';
+     font-family: "helvetica", sans-serif;
     letter-spacing: 2px;
     padding: 5px 10px;
     font-size: 25px;
@@ -495,7 +495,7 @@ footer {
     outline: none;
 }
 
-.copyright { font-family: 'Montserrat'; font-size: 20px; color: #B3B3B3; }
+.copyright {   font-family: "helvetica", sans-serif; font-size: 20px; color: #B3B3B3; }
 
 @media(max-width: 1024px) {
     .search {
@@ -588,7 +588,7 @@ footer {
   color: #FF4533;
   display: inline-block;
   padding: 12px 44px;
-  font-family: "Anton", sans-serif;
+    font-family: "helvetica", sans-serif;
   font-size: 16px;
   font-weight: 400;
   border: 0;
@@ -623,7 +623,7 @@ footer {
   color: #fff;
   display: inline-block;
   padding: 14px 35px;
-  font-family: "Anton", sans-serif;
+   font-family: "helvetica", sans-serif;
   font-size: 20px;
   font-weight: 500;
   border: 0;
@@ -666,7 +666,7 @@ footer {
   color: #fff;
   display: inline-block;
   padding: 13px 27px;
-  font-family: "Anton", sans-serif;
+   font-family: "helvetica", sans-serif;
   font-size: 16px;
   font-weight: 600;
   border: 0;
@@ -712,7 +712,7 @@ footer {
   color: #fff !important;
   display: inline-block;
   padding: 14px 47px;
-  font-family: "Anton", sans-serif;
+    font-family: "helvetica", sans-serif;
   font-size: 16px;
   font-weight: 500;
   border: 0;
@@ -755,7 +755,7 @@ footer {
   color: #fff;
   display: inline-block;
   padding: 18px 24px;
-  font-family: "Anton", sans-serif;
+   font-family: "helvetica", sans-serif;
   font-size: 16px;
   font-weight: 600;
   border: 0;
@@ -886,7 +886,7 @@ footer {
   margin-bottom: 0;
   font-weight: 400;
   margin-bottom: 0px;
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -901,7 +901,7 @@ footer {
   font-size: 30px;
   font-weight: 400;
   color: #FF4533;
-  font-family: "Anton", sans-serif;
+    font-family: "helvetica", sans-serif;
   margin-bottom: 0;
 }
 
@@ -1238,7 +1238,7 @@ footer {
 /* line 100, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area .buy_tkt .book_btn a {
   background: #FF4533;
-  font-family: "Anton", sans-serif;
+   font-family: "helvetica", sans-serif;
   padding: 12px 46px;
   font-size: 16px;
   font-weight: 400;
@@ -1569,7 +1569,7 @@ footer {
   border-radius: 2px;
  
   text-transform: uppercase;
-  font-family: 'Arial Black', sans-serif;
+  font-family: "Helvetica", sans-serif;
   letter-spacing: 1px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: transform 0.2s ease;
@@ -1845,7 +1845,7 @@ footer {
   font-size: 50px;
   font-weight: light;
   color: #ffffff;
-  font-family: "Anton", sans-serif;
+   font-family: "Helvetica", sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -1929,7 +1929,7 @@ footer {
   color: #FFF;
   margin-bottom: 34px;
   margin-top: 10px;
-  font-family: "Anton", sans-serif;
+   font-family: "Helvetica", sans-serif;
 }
 .slider_area .single_slider .slider_text .p2 {
   font-size: 30px;
@@ -1937,7 +1937,7 @@ footer {
   color: #FFF;
   margin-bottom: 34px;
   margin-top: 10px;
-  font-family: "Anton", sans-serif;
+ font-family: "Helvetica", sans-serif;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -2127,7 +2127,7 @@ footer {
   top: 8px;
   transition: all 0.15s ease-in-out;
   width: 5px;
-  font-family: 'themify';
+ font-family: "Helvetica", sans-serif;
   color: #ddd;
   color: #FFFFFF;
   top: 5px;
@@ -2186,7 +2186,7 @@ footer {
   top: 8px;
   transition: all 0.15s ease-in-out;
   width: 5px;
-  font-family: 'themify';
+ font-family: "Helvetica", sans-serif;
   color: #ddd;
   color: #FFFFFF;
   top: 5px;
@@ -2317,7 +2317,7 @@ footer {
 
 /* line 48, ../../Arafath/CL/December/236. Event-02/HTML/scss/_about.scss */
 .about_area .about_info h4 {
-  font-family: "Anton", sans-serif;
+ font-family: "Helvetica", sans-serif;
   font-size: 30px;
   font-weight: 400;
   color: #FF4533;
@@ -2440,12 +2440,12 @@ footer {
   font-weight: 400;
   color: #FFFFFF;
   text-transform: uppercase;
-  font-family: "Anton", sans-serif;
+   font-family: "Helvetica", sans-serif;
 }
 
 /* line 69, ../../Arafath/CL/December/236. Event-02/HTML/scss/_bradcam.scss */
 .bradcam_area .single_bradcam .bradcam_text h3 {
-  font-family: "Anton", sans-serif;
+ font-family: "Helvetica", sans-serif;
   font-size: 80px;
   text-transform: capitalize;
   font-weight: 400;
@@ -2453,7 +2453,7 @@ footer {
   line-height: 1;
   margin-top: 5px;
   margin-bottom: 23px;
-  font-family: "Monoton", cursive;
+  font-family: "Helvetica", sans-serif;
   position: relative;
   z-index: 9;
 }
@@ -2492,7 +2492,7 @@ footer {
   color: #FFF;
   margin-bottom: 34px;
   margin-top: 10px;
-  font-family: "Monoton", cursive;
+ font-family: "Helvetica", sans-serif;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -2570,7 +2570,7 @@ footer {
 /* line 30, ../../Arafath/CL/December/236. Event-02/HTML/scss/_performer.scss */
 .performar_area .single_performer .performer_heading h4 {
   font-size: 30px;
-  font-family: "Anton", sans-serif;
+  font-family: "Helvetica", sans-serif;
   color: #fff;
   font-weight: 400;
   margin-bottom: 14px;
@@ -2662,7 +2662,7 @@ footer {
 
 /* line 39, ../../Arafath/CL/December/236. Event-02/HTML/scss/_map.scss */
 .map_area .location_information .info_wrap .single_info span {
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
   font-weight: 600;
   font-size: 20px;
   margin-right: 20px;
@@ -2838,7 +2838,7 @@ footer {
 .program_details_area .program_detail_wrap .single_propram .porgram_top span {
   color: #FF4533;
   font-size: 30px;
-  font-family: "Anton", sans-serif;
+  font-family: "Helvetica", sans-serif;
   display: block;
   margin-bottom: 8px;
 }
@@ -2931,7 +2931,7 @@ footer {
   color: #AAB1B7;
   margin-bottom: 0;
   font-weight: 400;
-  font-family: "Muli", sans-serif;
+   font-family:"helvetica", sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -2969,7 +2969,7 @@ footer {
     margin-bottom: 100px !important;
    }
    .media-body p{
-display: none !important;
+margin-top: 30px !;
    }
 
    .second-sec h2{
@@ -3060,89 +3060,7 @@ display: none !important;
             }
 
 
-            .section-header h3 {
-  font-size: 36px;
-  color: #413e66;
-  text-align: center;
-  font-weight: 700;
-  position: relative;
-  font-family: "Montserrat", sans-serif;
-}
-
-.section-header p {
-  text-align: center;
-  margin: auto;
-  font-size: 15px;
-  padding-bottom: 60px;
-  color: #535074;
-  width: 50%;
-}
-
-@media (max-width: 767px) {
-  .section-header p {
-    width: 100%;
-  }
-}
-
-#services {
-  padding: 60px 0 40px 0;
-}
-
-#services .box {
-  padding: 50px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  
-  background: #fff;
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-  transition: all 0.3s ease-in-out;
-  text-align: center;
-  margin-bottom: 10px;
-  
-}
-
-/* #services .box:hover {
-  transform: scale(1.1);
-} */
-
-#services .icon {
-  margin: 0 auto 15px auto;
-  padding-top: 12px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-}
-
-#services .icon .service-icon {
-  font-size: 36px;
-  line-height: 1;
-}
-
-#services .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-#services .title a {
-  color: #111;
-}
-
-/* #services .box:hover .title a {
-  color: #c59c35;
-} */
-/* #services .box:hover .title a:hover {
-  text-decoration: none;
-} */
-#services .description {
-  font-size: 14px;
-  line-height: 28px;
-  margin-bottom: 0;
-  text-align: left;
-}
+            
                  
 /* line 45, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right a {
@@ -3862,7 +3780,7 @@ h6 {
 }
 
 .text_p2{
-  font-family: "anton", sans-serif !important;
+ font-family: "Helvetica", sans-serif;
   font-weight: 100 !important;
 }
 
