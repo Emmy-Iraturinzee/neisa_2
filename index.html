@@ -117,6 +117,107 @@
     }
     `;
     document.head.appendChild(style);
+    // Sidebar menu for mobile
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggler = document.querySelector('.navbar-toggler');
+        const sidebarId = 'mobileSidebarMenu';
+        let sidebar = document.getElementById(sidebarId);
+
+        if (!sidebar) {
+            sidebar = document.createElement('div');
+            sidebar.id = sidebarId;
+            sidebar.style.position = 'fixed';
+            sidebar.style.top = '0';
+            sidebar.style.right = '-300px';
+            sidebar.style.width = '300px';
+            sidebar.style.height = '100%';
+            sidebar.style.background = '#fff';
+            sidebar.style.boxShadow = '0 0 20px rgba(0,0,0,0.2)';
+            sidebar.style.zIndex = '10000';
+            sidebar.style.transition = 'right 0.3s';
+            sidebar.style.padding = '40px 20px 20px 20px';
+            sidebar.style.overflowY = 'auto';
+            sidebar.innerHTML = `
+                <button id="closeSidebarMenu" style="position:absolute;top:10px;right:20px;background:none;border:none;font-size:2rem;line-height:1;color:#0091ff;">&times;</button>
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+                    <li class="nav-item mt-3"><a href="https://neisa.qtsoftwareltd.com/registration"><button class="btn btn-outline-success w-100">Apply To Attend</button></a></li>
+                </ul>
+            `;
+            document.body.appendChild(sidebar);
+        }
+
+        toggler.addEventListener('click', function (e) {
+            e.preventDefault();
+            sidebar.style.right = '0';
+            document.body.style.overflow = 'hidden';
+        });
+
+        sidebar.addEventListener('click', function (e) {
+            if (e.target.id === 'closeSidebarMenu') {
+                sidebar.style.right = '-300px';
+                document.body.style.overflow = '';
+            }
+            // Close sidebar when clicking a nav-link
+            if (e.target.classList.contains('nav-link')) {
+                sidebar.style.right = '-300px';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Optional: close sidebar on ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && sidebar.style.right === '0px') {
+                sidebar.style.right = '-300px';
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Make navbar transparent on mobile, but sidebar stays white
+    document.addEventListener('DOMContentLoaded', function () {
+        function updateNavbarBg() {
+            const navbar = document.querySelector('.navbar');
+            if (window.innerWidth < 992) {
+                navbar.style.background = 'transparent';
+                navbar.classList.add('mobile-navbar-transparent');
+            } else {
+                navbar.style.background = '';
+                navbar.classList.remove('mobile-navbar-transparent');
+            }
+        }
+        updateNavbarBg();
+        window.addEventListener('resize', updateNavbarBg);
+        window.addEventListener('scroll', function () {
+            const togglerIcon = document.querySelector('.navbar-toggler .navbar-toggler-icon');
+            if (!togglerIcon) return;
+            if (window.scrollY > 10) {
+                togglerIcon.style.filter = 'none';
+            } else {
+                togglerIcon.style.filter = 'brightness(0) invert(1)';
+            }
+        });
+    });
+
+    // Optional: ensure .navbar-light.bg-light doesn't override transparency
+    const style2 = document.createElement('style');
+    style2.innerHTML = `
+    @media (max-width: 991.98px) {
+        .navbar.mobile-navbar-transparent,
+        .navbar.mobile-navbar-transparent.bg-light {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+        .navbar-toggler .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+    }
+    `;
+    document.head.appendChild(style2);
+    
     </script>
     <style>
     .navbar-nav .nav-link.active-nav,
@@ -125,7 +226,7 @@
         color: #0091ff !important;
     }
     </style>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -224,9 +325,7 @@
 </div>
 
     </section>
-<section  id="about_us">
 
-</section>
 <section >
 
 </section>
