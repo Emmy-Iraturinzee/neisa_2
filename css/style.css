@@ -2974,6 +2974,13 @@ footer {
    
     
    }
+   .col2 img{
+    width: 90%!important;
+   }
+
+  .hero-text-1{
+    margin-top: -100px !important;
+  }
    .hero-text{
     margin-top: 150px !important;
     font-size: 5vh !important;
