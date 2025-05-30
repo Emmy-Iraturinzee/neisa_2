@@ -287,27 +287,52 @@
    
         
   
-    <div class="slider_area" style="background: url('img/banner/babab.png') no-repeat center center; background-size: cover; width: 100%; height: 600px; background-attachment: fixed;">
-          <div class="container" style="height: 400px; display: flex; align-items: center;">
-   <div class="media " style="margin-top: 300px;">
-  <div class="media-body">
-    <h1 class="mt-0 mb-1 text-white hero-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s"
+     <section style="background: url('img/banner/babab.png') no-repeat center center; background-size: cover; min-height: 600px; display: flex; align-items: center; background-attachment: fixed;">
+            <div class="container">
+                <style>
+                @media (max-width: 991.98px) {
+                    .row.align-items-center {
+                        flex-direction: column !important;
+                    }
+                    .row.align-items-center > .col1,
+                    .row.align-items-center > .col2 {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                    .row.align-items-center {
+                        flex-direction: column-reverse !important;
+                    }
+                    .row.align-items-center > .col2 {
+                        order: -1;
+                    }
+                    .row.align-items-center > .col1 {
+                        order: 2;
+                    }
+                }
+                   @media (max-width: 991.98px) {
+                    .row.align-items-center {
+                        flex-direction: column !important;
+                    }
+                }
+                </style>
+             
+                </style>
+                <div class="row align-items-center" style="">
+                    <div class="col-md-6 text-white col1">
+ <h1 class="mt-1 mb-1 text-white wow fadeInLeft hero-text-1 " data-wow-duration="1s" data-wow-delay=".3s"
      style="font-family:Helvetica, sans-serif; font-size: 50px; font-weight: 900; width: 90%; letter-spacing: -2px;">
-    <span style="color: #0fbdf3;">600 million </span> Africans do not have access to electricity.</h1>
-    <p class="text-white mt-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 20px;">
-        Nuclear energy, with its minimal carbon emissions and increasingly<br> competitive costs, emerges as a viable option.
-    </p>
-
-  </div>
-    <img class="ml-3 hero-img wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s" src="img/banner/rightimg.png" alt="Generic placeholder image" style="width: 550px; margin-top: -40px; ">
-</div>
-    </div>
-    
-
-    
-    </div>
-  
-    </div>
+    <span style="color: #0fbdf3;">600 million </span> Africans do not have access to electricity.</h1>                    
+        <p style="font-size: 1.25rem; margin-top: 20px;">
+                          Nuclear energy, with its minimal carbon emissions and increasingly
+                          competitive costs, emerges as a viable option.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center col2">
+                        <img src="img/banner/colright.png" alt="Summit Illustration" class="img-fluid" style="max-width: 500px;">
+                    </div>
+                </div>
+            </div>
+        </section>
     
 </section> 
 <section class=" second-sec" style="padding: 50px; background-color: #003047 !important;">

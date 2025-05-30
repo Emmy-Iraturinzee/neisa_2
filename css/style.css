@@ -2974,12 +2974,19 @@ footer {
    
     
    }
+   .slider_area{
+    background-attachment: scroll !important;
+   }
    .col2 img{
-    width: 90%!important;
+    width: 100%!important;
+    margin-top: -100px!important;
+
    }
 
   .hero-text-1{
-    margin-top: -100px !important;
+    margin-top: 10px !important;
+    width: 101% !important;
+    font-size: 45px !important;
   }
    .hero-text{
     margin-top: 150px !important;
