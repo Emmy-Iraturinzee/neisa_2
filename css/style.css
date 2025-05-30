@@ -453,6 +453,9 @@ footer {
     padding: 5px 10px;
     font-size: 25px;
 }
+.flex-card{
+display: flex;
+}
 
 .up-section, .down-section {
     display: flex;
