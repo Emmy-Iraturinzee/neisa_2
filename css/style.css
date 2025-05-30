@@ -845,6 +845,10 @@ display: flex;
   .agenda-title{
     font-size: 25px!important;
   }
+
+  .blure-text{
+    margin-top: -100px!important;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
