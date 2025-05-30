@@ -3030,8 +3030,17 @@ footer {
 
 @media(min-width: 768px) and (max-width: 991px){
 
-  .hero-text{
-    font-size: 10px;
+  .hero-text-1{
+    font-size: 50px !important;
+    width: 700px !important;
+   margin-left: -180px !important;
+   
+  }
+  .col1 p{
+    margin-left: -180px !important;
+  }
+  .col2 img{
+    margin-left: -205px !important;
   }
 
 }
