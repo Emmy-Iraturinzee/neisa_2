@@ -7,9 +7,24 @@
     <title>NEISA - Kigali</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0091ff">
+    <meta name="keywords" content="">
+    <meta name="author" content="NEISA">
+    <meta name="copyright" content="NEISA">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="1 days">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+    <!-- <meta name="url" content="https://neisa.org"> -->
+    <meta name="author" content="NEISA">
+    <meta name="copyright" content="NEISA">
+  
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo_2.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -29,49 +44,226 @@
 </head>
 
 <body>
-    <!--[if lte IE 9]>
+    <!-- [if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+        <![endif] -->
 
     <!-- header-start -->
     <header>
+
+        
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
+                <div id="progress-bar-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 9999;">
+                    <div id="progress-bar" style="height: 100%; width: 0; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
+                </div>
+                <script>
+                    window.addEventListener('scroll', function() {
+                        const scrollTop = window.scrollY;
+                        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        const scrollPercent = (scrollTop / docHeight) * 100;
+                        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+                    });
+                </script>
                 <div class="container">
                     <div class="header_bottom_border">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light rounded" >
+      <!-- <a class="navbar-brand" href="#"><img src="img/ANES.png" style="width: 10px;"></a> -->
+    <!-- <a class="navbar-brand" href="#"><img src="img/anes-logo.png" style="width: 40px;"></a> -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Smooth scroll for .nav-link
+        document.querySelectorAll('.nav-link[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                const hash = this.getAttribute('href');
+                if (hash.length > 1 && document.querySelector(hash)) {
+                    e.preventDefault();
+                    document.querySelector(hash).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Update active class
+                    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(nav) {
+                        nav.classList.remove('active-nav');
+                    });
+                    this.classList.add('active-nav');
+                }
+            });
+        });
+
+        // Set active on scroll
+        const sections = Array.from(document.querySelectorAll('section[id]'));
+        window.addEventListener('scroll', function() {
+            let scrollPos = window.scrollY || document.documentElement.scrollTop;
+            let found = false;
+            sections.forEach(function(section) {
+                if (!found && section.offsetTop - 80 <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(nav) {
+                        nav.classList.remove('active-nav');
+                        if (nav.getAttribute('href') === '#' + section.id) {
+                            nav.classList.add('active-nav');
+                        }
+                    });
+                    found = true;
+                }
+            });
+        });
+    });
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+    @media (max-width: 767px) {
+        .navbar-nav .nav-link.active-nav,
+        .navbar-nav .nav-item.active .nav-link {
+            border-bottom: none !important;
+        }
+    }
+    `;
+    // Mobile navbar background: visible dark, blur
+ 
+    document.head.appendChild(style);
+    // Sidebar menu for mobile
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggler = document.querySelector('.navbar-toggler');
+        const sidebarId = 'mobileSidebarMenu';
+        let sidebar = document.getElementById(sidebarId);
+
+        if (!sidebar) {
+            sidebar = document.createElement('div');
+            sidebar.id = sidebarId;
+            sidebar.style.position = 'fixed';
+            sidebar.style.top = '0';
+            sidebar.style.right = '-300px';
+            sidebar.style.width = '300px';
+            sidebar.style.height = '100%';
+            sidebar.style.background = '#fff';
+            sidebar.style.boxShadow = '0 0 20px rgba(0,0,0,0.2)';
+            sidebar.style.zIndex = '10000';
+            sidebar.style.transition = 'right 0.3s';
+            sidebar.style.padding = '40px 20px 20px 20px';
+            sidebar.style.overflowY = 'auto';
+            sidebar.innerHTML = `
+                <button id="closeSidebarMenu" style="position:absolute;top:10px;right:20px;background:none;border:none;font-size:2rem;line-height:1;color:#0091ff;">&times;</button>
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+                    <li class="nav-item mt-3"><a href="https://neisa.qtsoftwareltd.com/registration"><button class="btn btn-outline-success w-100">Apply To Attend</button></a></li>
+                </ul>
+            `;
+            document.body.appendChild(sidebar);
+        }
+
+        toggler.addEventListener('click', function (e) {
+            e.preventDefault();
+            sidebar.style.right = '0';
+            document.body.style.overflow = 'hidden';
+        });
+
+        sidebar.addEventListener('click', function (e) {
+            if (e.target.id === 'closeSidebarMenu') {
+                sidebar.style.right = '-300px';
+                document.body.style.overflow = '';
+            }
+            // Close sidebar when clicking a nav-link
+            if (e.target.classList.contains('nav-link')) {
+                sidebar.style.right = '-300px';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Optional: close sidebar on ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && sidebar.style.right === '0px') {
+                sidebar.style.right = '-300px';
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Make navbar transparent on mobile, but sidebar stays white
+    document.addEventListener('DOMContentLoaded', function () {
+        function updateNavbarBg() {
+            const navbar = document.querySelector('.navbar');
+            if (window.innerWidth < 992) {
+                navbar.style.background = 'transparent';
+                navbar.classList.add('mobile-navbar-transparent');
+            } else {
+                navbar.style.background = '';
+                navbar.classList.remove('mobile-navbar-transparent');
+            }
+        }
+        updateNavbarBg();
+        window.addEventListener('resize', updateNavbarBg);
+        window.addEventListener('scroll', function () {
+            const togglerIcon = document.querySelector('.navbar-toggler .navbar-toggler-icon');
+            if (!togglerIcon) return;
+            if (window.scrollY > 10) {
+                togglerIcon.style.filter = 'none';
+            } else {
+                togglerIcon.style.filter = 'brightness(0) invert(1)';
+            }
+        });
+    });
+
+    // Optional: ensure .navbar-light.bg-light doesn't override transparency
+    const style2 = document.createElement('style');
+    style2.innerHTML = `
+    @media (max-width: 991.98px) {
+        .navbar.mobile-navbar-transparent,
+        .navbar.mobile-navbar-transparent.bg-light {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+        .navbar-toggler .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+    }
+    `;
+    document.head.appendChild(style2);
+    
+    </script>
+    <style>
+    .navbar-nav .nav-link.active-nav,
+    .navbar-nav .nav-item.active .nav-link {
+        border-bottom: 3px solid #0091ff;
+        color: #0091ff !important;
+    }
+    </style>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: -20px;">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link " href="#home">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+       <li class="nav-item" >
+        <a class="nav-link" href="#about">About</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <li class="nav-item" >
+        <a class="nav-link" href="#speakers">Speakers</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <li class="nav-item" >
+        <a class="nav-link" href="#agenda">Agenda</a>
       </li>
+
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
+    <a href="https://neisa.qtsoftwareltd.com/registration" style="font-size: 1.25rem; color: #24b72e; display: inline-flex; align-items: center;">
+        Apply to Attend
+        <span class="arrow-move " style="display:inline-block; margin-top: -5px; transition:transform 0.2s;">
+            <svg width="30" height="30" viewBox="0 0 20 20" fill="none" style="vertical-align:middle;">
+                <path d="M6 14L14 6M14 6H7M14 6V13" stroke="#24b72e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+    </a>
+    <style>
+        a[href="https://neisa.qtsoftwareltd.com/registration"]:hover .arrow-move {
+            transform: translateX(8px);
+        }
+    </style>
+ 
+ 
   </div>
 </nav>
                     </div>
@@ -79,313 +271,1003 @@
                 </div>
             </div>
         </div>
+
+
+        
     </header>
     <!-- header-end -->
 
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center  overlay">
-            <div class="video_overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.561); z-index: 1;"></div>
-            <video autoplay muted loop id="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-                <source src="img/banner/vecteezy_africa-map-futuristic-broadcast-animation-blue-free-download_46161810 (1).mp4" type="video/mp4">
-         
-            </video>
-            <div class="container">
-                <div class="row align-items-center justify-content-center" style="margin-top: -80px;">
-                    <div class="col-xl-12" style="z-index: 1000;">
-                        <div class="slider_text">
-                            <!-- <div class="shape_1 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape/shape_1.svg" alt="">
-                            </div>
-                            <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape/shape_2.svg" alt="">
-                            </div> -->
-                            <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">12 June, 2025</span>
-                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">Nuclear Energy Innovation Summit for Africa</h3>
-                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">Kigali, Rwanda</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
+    <main>
 
-    <!-- performar_area_start  -->
-    <div class="performar_area black_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title mb-80">
-                        <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Speakers</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/team/profile 1.png " style="width: 320px;" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4 class="mb-2">Mrs. Wilhelmina Asamoah</h4>
-                                    <span class="mb-5">Chief Director of the Ministry of Energy</span>
-                                    <p class="mb-2">Mrs. Wilhelmina Asamoah is the Chief Director of the Ministry of Energy. She holds an MBA in
-                                        Education Leadership from the University of Cumbria’s Robert Kennedy College in the UK and a
-                                        Postgraduate Diploma in International Human Resources and Globalisation from Leicester University,
-                                        UK. She also holds a Postgraduate Diploma in Public Administration from GIMPA as well as other
-                                        public administration certificates from the same institution.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/performer/2.png" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4>Protik Hasan</h4>
-                                    <span>Acoustic drum</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/performer/3.png" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4>Salmon Vicky</h4>
-                                    <span>Acoustic drum</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div   class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/performer/4.png" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4>Filaris Habol</h4>
-                                    <span>Acoustic drum</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- performar_area_end  -->
-
-    <!-- about_area_start  -->
-    <div class="about_area black_bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section_title text-center mb-80">
-                        <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" >About Program</h3>
-                        <p class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s" >The event regularly attracts a diverse range of attendees from around the world, across different professions, and with different.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-7 col-md-6">
-                    <div class="about_thumb">
-                        <div class="shap_3  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">
-                            <img src="img/shape/shape_3.svg" alt="">
-                        </div>
-                        <div class="thumb_inner  wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                            <img src="img/about/about.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <div class="about_info pl-68">
-                        <h4 class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">It’s time to book your seat</h4>
-                        <p  class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".6s">The event regularly attracts a diverse range of attendees from around the world, across different professions, and with different levels of experience transform your business.</p>
-                        <a href="#" class="boxed-btn3  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s">Buy Tickets</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- about_area_end  -->
-
-    <div class="program_details_area detials_bg_1 overlay2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-80  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-                        <h3 style="color: white;">Agenda</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="program_detail_wrap">
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class=" wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/1.png" alt="">
-                                </div>
-                                <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
-                        </div>
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/2.png" alt="">
-                                </div>
-                                <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
-                        </div>
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class=" wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb  wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/3.png" alt="">
-                                </div>
-                                <h4 class=" wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
-                        </div>
-                        <div class="single_propram">
-                            <div class="inner_wrap">
-                                <div class="circle_img"></div>
-                                <div class="porgram_top">
-                                    <span class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">3.00-4.00pm</span>
-                                    <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">12 Feb 2020</h4>
-                                </div>
-                                <div class="thumb wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
-                                    <img src="img/program_details/4.png" alt="">
-                                </div>
-                                <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">Mr. Zosoldos</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- map_area_start  -->
-    <!-- <div class="map_area">
-        <div id="map" style="height: 600px; position: relative; overflow: hidden;">
+<section>
+    
+</section>
         
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.500491852606!2d30.11567749999999!3d-1.9530922000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7a1ccdef87b%3A0x4452855a46876a65!2sBK%20Arena!5e0!3m2!1sen!2srw!4v1744793875667!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="location_information black_bg wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-            <h3>Concert 2020</h3>
-            <div class="info_wrap">
-                <div class="single_info">
-                    <span>Vanue:</span>
-                    <p>26/A, Coontum Avenu
-                        New York-2783</p>
-                </div>
-                <div class="single_info">
-                    <span>Phone:</span>
-                    <p>+10 (88) 267 368 283</p>
-                </div>
-                <div class="single_info">
-                    <span>Email:</span>
-                    <p>contact@concert20.com</p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- map_area_end  -->
+<!-- <section id="home">
+   
+        
+  
+    <div class="slider_area" style="background: url('img/banner/babab.png') no-repeat center center; background-size: cover; width: 100%; height: 600px; background-attachment: fixed;">
+          <div class="container" style="height: 400px; display: flex; align-items: center;">
+   <div class="media " style="margin-top: 300px;">
+  <div class="media-body">
+    <h1 class="mt-0 mb-1 text-white hero-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s"
+     style="font-family:Helvetica, sans-serif; font-size: 50px; font-weight: 900; width: 90%; letter-spacing: -2px;">
+    <span style="color: #0fbdf3;">600 million </span> Africans do not have access to electricity.</h1>
+    <p class="text-white mt-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 20px;">
+        Nuclear energy, with its minimal carbon emissions and increasingly<br> competitive costs, emerges as a viable option.
+    </p>
 
-    <!-- brand_area_start  -->
-    <div class="brand_area black_bg">
+  </div>
+    <img class="ml-3 hero-img wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s" src="img/banner/rightimg.png" alt="Generic placeholder image" style="width: 550px; margin-top: -40px; ">
+</div>
+    </div>
+    
+
+    
+    </div>
+  
+    </div>
+    
+</section>  -->
+<!-- <section class=" second-sec" style="padding: 50px; background-color: #003047 !important;">
+
+    <div class="container wow fadeInUp apply-sec" data-wow-duration="1s" data-wow-delay=".5s">
+          <h2 class="text-white" style="font-family:Helvetica, sans-serif; font-weight: 300;"  >30 June - 1 July 2025 | Kigali Convention Center | Rwanda        <a href="https://neisa.qtsoftwareltd.com/registration" class="float-right" style="font-size: 1.25rem; color: #AAFFA6; display: inline-flex; align-items: center; ">
+        Apply to Attend
+        <span class="arrow-move " style="display:inline-block; margin-top: -5px; transition:transform 0.2s;">
+            <svg width="30" height="30" viewBox="0 0 20 20" fill="none" style="vertical-align:middle;">
+                <path d="M6 14L14 6M14 6H7M14 6V13" stroke="#AAFFA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+    
+    </a>
+</h2>
+
+
+    </div>
+  
+</section> -->
+    <!-- <section>
+        <div class=" mt-5">
+        </div>
+
+
+<div class="marquee">
+ 
+  <div class="marquee__inner">
+    <div class="marquee__group">
+      <span><img src="img/banner/partner1.svg.png" width="80"> </span>
+      <span><img src="img/banner/partnerr2.png" width="100"> </span>
+      <span><img src="img/banner/partner3.png" width="200"> </span>
+      <span><img src="img/banner/partner 4.svg.png" width="250"> </span>
+       <span><img src="img/banner/partner5.png" width="100"> </span>
+    </div>
+
+    <div class="marquee__group">
+   <span><img src="img/banner/partner1.svg.png" width="80"> </span>
+      <span><img src="img/banner/partnerr2.png" width="100"> </span>
+      <span><img src="img/banner/partner3.png" width="200"> </span>
+      <span><img src="img/banner/partner 4.svg.png" width="250"> </span>
+       <span><img src="img/banner/partner5.png" width="100"> </span>
+    </div>
+  </div>
+</div>
+
+    </section> -->
+
+
+
+<!-- <section  >
+<div class=" about" style="position: relative; overflow: hidden;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-80">
-                        <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Sponsor Logos</h4>
-                    </div>
+            <h3 style=" margin-top: 70px; font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #003047; ">About the Summit</h3>
+            <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
+        </div>
+       
+
+   
+    
+         <div class="container">
+            <p class="wow fadeInRight mt-4" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 20px; font-family: Helvetica, sans-serif; color:#003047; ">
+                This landmark summit will convene policymakers, industry leaders, and global experts to explore the theme: <strong>“The Potential of Small Modular and Micro Reactors in Accelerating Africa’s Energy Transition.”</strong> 
+            </p>
+               <p class="wow fadeInRight mt-4" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 20px; font-family: Helvetica, sans-serif; color:#003047; ">
+              We will spotlight the transformative role of nuclear innovation, with a particular emphasis <strong>on Small Modular and Micro Reactors (SMRs and MMRs)</strong>  and the enabling conditions necessary for their success—infrastructure, financing, political will, and localized technology development.
+            </p>
+               <p class="wow fadeInRight mt-4" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 20px; font-family: Helvetica, sans-serif; color:#003047; ">
+               The summit is organized in collaboration with key international institutions, including <strong>International Atomic Energy Agency (IAEA), United Nations Economic Commission for Africa (UNECA), Nuclear Energy Agency (NEA), World Nuclear Association (WNA)</strong> , and leading regional financial institutions.
+            </p>
+         </div>
+       
+    </div>
+</section> -->
+<!-- <section id="about" style="margin-bottom: 100px;">
+    
+</section> -->
+<!-- <section id="" style="background-color: #003047; padding: 50px;">
+    <div class=" about" style="position: relative;">
+      
+       
+
+     
+
+         <div class="container text-center" style="margin-top: -10px!important" >
+            <h3 class="text-white mb-5 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s" style="font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color: #63d96a;">Why are we convening</h3>
+            <p class="wow fadeInRight mt-4 text-white" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 20px; font-family: Helvetica, sans-serif; font-weight: lighter;">
+<strong style="font-weight: 900;">Addressing Energy Poverty: </strong>Small Modular Reactors (SMRs) and Micro Reactors (MRs) offer scalable, low-carbon solutions to expand energy access in remote and underserved areas.
+            </p>
+               <p class="wow fadeInRight mt-4 text-white" data-wow-duration="1s" data-wow-delay=".5s" style="font-size: 20px; font-family: Helvetica, sans-serif; font-weight: lighter !important; ">
+          <strong style="font-weight: 900;"> Supporting Industrialization:</strong>  Reliable power from SMRs/MRs can support critical sectors like Mining, Manufacturing, Healthcare, and Education, Powering Data Centers for Artificial Intelligence (AI)
+            </p>
+          
+         </div>
+       
+    </div>
+    <section class="services section-bg" id="services">
+        <style>
+
+
+.section-header h3 {
+  font-size: 36px;
+  color: #413e66;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+.section-header p {
+  text-align: center;
+  margin: auto;
+  font-size: 15px;
+  padding-bottom: 60px;
+  color: #535074;
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  .section-header p {
+    width: 100%;
+  }
+}
+
+#services {
+  padding: 60px 0 40px 0;
+}
+
+#services .box {
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  margin-bottom: 10px;
+  
+}
+
+/* #services .box:hover {
+  transform: scale(1.1);
+} */
+
+#services .icon {
+  margin: 0 auto 15px auto;
+  padding-top: 12px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+#services .icon .service-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+#services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#services .title a {
+  color: #111;
+}
+
+/* #services .box:hover .title a {
+  color: #c59c35;
+} */
+/* #services .box:hover .title a:hover {
+  text-decoration: none;
+} */
+#services .description {
+  font-size: 14px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: left;
+}
+        </style>
+  <div class="">
+  
+
+    <div class="row">
+    
+
+     
+
+      <div class="col-md-3 wow fadeInLeft " data-wow-duration="1s" data-wow-delay=".5s">
+        <div class="box" style="backdrop-filter: blur(8px); background: #002A69; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1); border-radius: 10px; border: 3px solid; border-image: linear-gradient(90deg, #63d96a, #0091ff) 1; ;">
+          <div class="icon" style="background: #075ec8;">
+          <img src="img/icon/policy (2).png" class="service-icon" style="color: #c59c35; width: 36px; height: 36px;">
+          </div>
+
+          <h4 class="title text-white">Policy and
+Investment Opportunities</h4>
+<strong class="" style="color:#24b72e">Regulatory Frameworks</strong> 
+          <p class=" text-white">
+
+Understand evolving nuclear policies, safety protocols, and licensing requirements in African contexts.</p>
+
+ <strong class=" mt-2" style="color:#24b72e"> Attracting Capital </strong>
+
+<p class="text-white" style="font-weight:lighter;">
+Discover how SMRs and MRs are attracting public and private investment, and the financing models that work in emerging markets.
+</p>
+        </div>
+      </div>
+
+    <div class="col-md-3 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+        <div class="box" style="backdrop-filter: blur(8px); background:  #002A69; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1); border-radius: 10px; border: 3px solid; border-image: linear-gradient(90deg, #63d96a, #0091ff) 1; ;">
+          <div class="icon" style="background: #075ec8;">
+          <img src="img/icon/technology.png" class="service-icon" style="color: #c59c35; width: 36px; height: 36px;">
+          </div>
+
+          <h3 class="title text-white">Technological Innovation & Knowledge Sharing</h3>
+<strong class="" style="color:#24b72e">Latest Advances</strong> 
+          <p class="text-white" style="font-weight:lighter;">
+
+Learn about cutting-edge reactor technologies, deployment models, and international best practices.</p>
+
+ <strong class=" mt-2" style="color:#24b72e"> R&D CollaborationA </strong>
+
+<p class="text-white" style="font-weight:lighter;">
+Connect with innovators and researchers to foster partnerships on nuclear development tailored to Africa's unique needs.</p>
+        </div>
+      </div>
+    <div class="col-md-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+        <div class="box" style="backdrop-filter: blur(8px); background:  #002A69; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1); border-radius: 10px; border: 3px solid; border-image: linear-gradient(90deg, #63d96a, #0091ff) 1; ;">
+            <div class="icon" style="background: #075ec8;">
+            <img src="img/icon/climate change.png" class="service-icon" style=" width: 36px; height: 36px;">
+            </div>
+            <h4 class="title text-white">Energy Mix
+    for a Changing
+Climate</h4>
+<strong class="" style="color:#24b72e">Decarbonization Goals </strong> 
+          <p class="text-white" style="font-weight:lighter;">
+
+Explore how SMRs and MRs can complement renewables to reduce emissions and achieve net-zero targets.</p>
+
+ <strong class=" mt-2" style="color:#24b72e"> Energy Resilience </strong>
+
+<p class="text-white" style="font-weight:lighter;">
+SMRs/MRs offer resilient, on-demand energy with minimal environmental footprint—ideal for off-grid or disaster-prone areas.
+</p>
+        </div>
+      </div>
+
+    <div class="col-md-3 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+        <div class="box" style="backdrop-filter: blur(8px);  height: 98%; background:  #002A69; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1); border-radius: 10px; border: 3px solid; border-image: linear-gradient(90deg, #63d96a, #0091ff) 1; ;">
+          <div class="icon" style="background: #075ec8;">
+          <img src="img/icon/handshake.png" class="service-icon" style="color: #c59c35; width: 36px; height: 36px;">
+          </div>
+
+          <h4 class="title text-white ">Sustainable
+Strategic
+Partnerships</h4>
+<strong class="" style="color:#24b72e">Stakeholder Engagement</strong> 
+          <p class="text-white" style="font-weight:lighter;">
+
+Collaborate  with energy ministers, utility executives, developers, regulators, financiers, and international experts.</p>
+
+ <strong class=" mt-2" style="color:#24b72e"> Form Collaborations </strong>
+
+<p class="text-white" style="font-weight:lighter;">
+Build partnerships that can accelerate national and regional nuclear projects.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+</section> -->
+<!-- <section class="partners"style="background: url('img/banner/bluredbac.png') no-repeat center center;; background-size: cover; padding: 40px 0;" >
+
+    <div class="container text-center">
+            <h3 class="text-center text-white mb-4 blure-text" style="font-weight: 700; font-family: Helvetica, sans-serif; font-size: 55px; color: #080808; ;">Gain Access to Groundbreaking Insights</h3>
+
+    <div class="text-center" >
+        <p class="text-white" style=" font-weight: lighter; font-family: Helvetica, sans-serif; font-size: 25px;">
+Learn from leading global experts and innovators on the potential and application of SMRs and Micro Reactors tailored to African contexts.
+        </p>
+    </div>
+
+       
+    </div>
+</div>
+
+
+</section> -->
+<section  >
+    <style>
+
+    </style>
+    
+    <div class="mb-5">
+   </div>     <h3 class="text-center mt-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="font-weight: 700; font-family: Helvetica, sans-serif; font-size: 40px; color: 002A69; margin-bottom: 40px; margin-top: 50px;">Who Should Attend?</h3>
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-6 mb-4 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">Government &amp; Policy Makers</h5>
+                    <ul style="padding-left: 18px; font-size: 16px;">
+                        <li class="mb-2" style="list-style: disc;">Understand how SMRs &amp; MMRs can fast-track electrification &amp; energy demands, especially in rural and industrial zones.</li>
+                          <li class="mb-2" style="list-style: disc;">Learn how to align national policies with global nuclear innovation and safety standards.</li>
+                          <li class="mb-2" style="list-style: disc;">Explore options for public-private partnerships and regional power pooling.</li>
+                    </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="brand_wrap">
-                        <div class="brand_active owl-carousel">
-                            <div class="single_brand text-center">
-                                <img src="img/brand/1.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/2.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/3.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/4.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/5.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/1.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-md-6 col-sm-6 mb-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">Nuclear Regulatory Authorities</h5>
+                     <ul style="padding-left: 18px; font-size: 16px;">
+                        <li class="mb-2"style="list-style: disc;">Contribute to policy dialogues and thought leadership on Africa’s clean energy transition.</li>
+                      <li class="mb-2" style="list-style: disc;">Support capacity building initiatives and cross-border cooperation.</li>
+                    <li class="mb-2" style="list-style: disc;">Shape regional strategies and share international best practices.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">Energy Utilities &amp; Infrastructure Developers</h5>
+                   <ul style="padding-left: 18px; font-size: 16px;">
+                      <li class="mb-2" style="list-style: disc;">Collaborate to develop SMR/MMR deployment models to meet Africa’s decentralized energy needs.</li>
+                       <li class="mb-2" style="list-style: disc;">Engage with technology vendors and financiers offering turnkey and scalable solutions.</li>
+                       <li class="mb-2" style="list-style: disc;">Gain insight into grid integration, licensing, and site selection.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">Scientific &amp; Technical Experts</h5>
+                      <ul style="padding-left: 18px; font-size: 16px;">
+                     <li class="mb-2" style="list-style: disc;">Deep dive into latest SMR/MMR technologies, safety systems, and design innovations.</li>
+                    <li class="mb-2" style="list-style: disc;">Exchange knowledge on waste management, fuel cycles, and localization of R&amp;D.</li>
+                       <li class="mb-2"  style="list-style: disc;">Form research partnerships with global institutions and African educational institutions.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">Investors and Finance Professionals</h5>
+                        <ul style="padding-left: 18px; font-size: 16px;">
+                       <li class="mb-2" style="list-style: disc;">Identify bankable projects and understand risk-mitigation frameworks around nuclear innovation in Africa.</li>
+                    <li class="mb-2"style="list-style: disc;">Explore funding models, blended finance, and green bond potential for SMRs.</li>
+                       <li class="mb-2"style="list-style: disc;">Meet early-stage innovators and project developers seeking investment.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">Energy Users (Mining, Manufacturing, Data Centers)</h5>
+             <ul style="padding-left: 18px; font-size: 16px;">
+                      <li class="mb-2" style="list-style: disc;">Harness SMRs as reliable off-grid power to support industrial growth.</li>
+                       <li class="mb-2" style="list-style: disc;">Explore custom energy solutions for mining, logistics, and agro-processing.</li>
+                       <li class="mb-2" style="list-style: disc;">Evaluate cost and ROI comparisons with diesel, solar, and grid extensions.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">Civil Society</h5>
+                   <ul style="padding-left: 18px; font-size: 16px;">
+                      <li class="mb-2" style="list-style: disc;">Be at the forefront of a transformative energy narrative for Africa.</li>
+                      <li class="mb-2" style="list-style: disc;">Learn about SMRs/MMRs and their role in Africa’s energy future.</li>
+                    <li  class="mb-2"style="list-style: disc;">Understand safety, transparency, and regulatory measures.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,145,255,0.07); padding: 25px; height: 100%;">
+                    <h5 class="mb-3 text-center" style="color:#24b72e; font-weight:700; font-family:Helvetica, sans-serif;">R&amp;D Institutions and Universities</h5>
+              <ul style="padding-left: 18px; font-size: 16px;">
+                       <li  class="mb-2"  style="list-style: disc;">Connect with nuclear education and workforce development initiatives.</li>
+                     <li class="mb-2" style="list-style: disc;">Gain access to curriculum resources, internships, and exchange programs.</li>
+                      <li class="mb-2" style="list-style: disc;">Position your institution in regional R&amp;D and capacity-development partnerships.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- brand_area_end  -->
-    <!-- footer_start  -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="footer_widget">
-                            <div class="address_details text-center">
-                                <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">12 Feb, 2020</h4>
-                                <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Green Avenue, New York</h3>
-                                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">The event regularly attracts a diverse range of attendees from around the world.</p>
-                                <a href="#" class="boxed-btn3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Buy Tickets</a>
-                            </div>
+</section>
+
+
+<section id="speakers" style="background: url(img/team/backteam\ \(1\)-min\ \(1\)\ \(1\)\ \(1\).png); background-position: center; background-size: cover; background-attachment: fixed; width: 100%; ">
+   
+<div class="container">
+        <div class="row">
+            <div class="col-12" style="padding: 20px;">
+
+               
+            </div>
+        </div>
+
+        <div class="container leaders leaders-container " >
+            <h3 class="text-center" style="font-weight: 700; font-family:Helvetica, sans-serif; font-size: 40px; color:#003047 ">The Summit's Thought Leaders</h3>
+            <div style="width: 100%; height: 1px; margin-top: 30px; background: linear-gradient(to right, #63d96a, #0091ff);"></div>
+    
+            <div class="row mt-5">
+                               <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Rafael.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Rafael Mariano Grossi</h4>
+         
+                        </div>
+                        <p>Director-General, International Atomic Energy Agency (IAEA)</p>
+                    </div>
+                </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 mb-3  ">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/lassina.png" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Dr. Lassina Zerbo</h4>
+                            <p>Chairman, Rwanda Atomic Energy Board </p>
+                      
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/sma.jpeg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2" style="color:#0091ff;font-family:Helvetica, sans-serif;">Dr. Sama Bilbao y León</h4>
+                            <p>Director General, World Nuclear Association </p>
+                  
+                        </div>
                     </div>
                 </div>
+                     <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/yohana.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2" style="color:#0091ff;font-family:Helvetica, sans-serif;">Dr. Yohannes G. Hailu</h4>
+                            <p>Economic Affairs Officer, United Nations Economic Commission for Africa (UNECA)</p>
+                  
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/giovannini.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Dr. Francesca Giovannini</h4>
+                            <p>Executive Director, Harvard Belfer Center Initiative of Managing the Atom</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/gasore.png" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Dr. Jimmy Gasore</h4>
+                            <p>Minister, Ministry of Infrastructure, Rwanda </p>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/william.png" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2" style="color:#0091ff;font-family:Helvetica, sans-serif;">William Fork</h4>
+                            <p>Partner, Pillsbury Winthrop Shaw Pittman</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Serge Ekué.jpg.webp" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Serge Ekué</h4>
+                            <p>President, West African Development Bank</p>
+   
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/charles.webp" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff;font-family:Helvetica, sans-serif;">Charles Oppenheimer</h4>
+                            <p>Founder, Oppenheimer Project and Oppenheimer Energy Ventures</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Mr. Mark Nelson. (1).jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Mark Nelson</h4>
+                            <p>Founder and Managing Director, Radiant Energy Group</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/merrifield.png" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Jeffrey S. Merrifield</h4>
+                            <p>Partner, Pillsbury Winthrop Shaw Pittman</p>
+
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Ian Farnan.jpg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Prof. Ian Farnan</h4>
+                            <p>Professor, Earth and Nuclear Materials in the Department of Earth Sciences at the University of Cambridge</p>
+
+                        </div>
+                    </div>
+                </div>
+                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Chira Zerbo.jpeg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Chira Zerbo</h4>
+                            <p>International Business Development Specialist, Cambridge AtomWorks</p>
+      
+                        </div>
+                    </div>
+                </div>
+                     
+                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="thumb">
+                            <img class="speaker_img mb-3 img-fluid" src="img/team/Princess Mthombeni (1) (2).jpeg" style="border-radius: 5px;" alt="">
+                        </div>
+                        <div class="performer_heading">
+                            <h4 class="mb-2"style="color:#0091ff; font-family:Helvetica, sans-serif;">Princess Mthombeni</h4>
+                            <p>Founder, Africa4Nuclear</p>
+
+                        </div>
+                    </div>
+                </div>
+    
+              
+              </div>
+        </div>
+    </div>
+   
+
+ 
+</section> 
+
+<section>
+    
+</section>
+
+ <section id="agenda" style="background-color:#003047" >
+                <h3  class="mb-5 mt-5 text-center" style="margin-top: 100px; padding:50px; font-weight: 700; font-family: Helvetica, sans-serif; font-size: 40px; color: #ffffff;">The Agenda</h3>
+
+
+<style>
+.fullwidth-tabs {
+    width: 100%;
+    margin-bottom: 40px;
+  
+}
+.fullwidth-tabs .nav-tabs {
+    display: flex;
+    border: none;
+    width: 100%;
+    justify-content: space-between;
+    
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    
+}
+.fullwidth-tabs .nav-item {
+    flex: 1 1 0;
+    text-align: center;
+       border: 2px solid #0091ffac;
+       color: white;
+}
+.fullwidth-tabs .nav-link {
+    border: none;
+    border-radius: 0;
+    background: none;
+   color:white;
+    font-size: 22px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    padding: 24px 0;
+    transition: background 0.2s, color 0.2s;
+}
+.fullwidth-tabs .nav-link.active {
+    background:#63d96a;
+    color: #fff !important;
+    font-weight: 900;
+    width: 100%;
+    height: 101%;
+    border: #63d96a;
+  
+}
+.fullwidth-tabs .nav-link:focus {
+    outline: none;
+}
+.fullwidth-tabs .tab-content {
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 24px rgba(0,145,255,0.07);
+    padding: 40px 30px 30px 30px;
+    font-family: Helvetica, sans-serif;
+}
+@media (max-width: 767px) {
+    .fullwidth-tabs .nav-link {
+        font-size: 16px;
+        padding: 14px 0;
+    }
+    .fullwidth-tabs .tab-content {
+        padding: 20px 5px 15px 5px;
+    }
+}
+</style>
+
+<div class=" fullwidth-tabs mb-5 mt-5"   >
+
+    <ul class="nav nav-tabs wow fadeInDown" id="agendaTabs" role="tablist" data-wow-duration="1s" data-wow-delay=".1s" >
+        <li class="nav-item">
+            <a class="nav-link active" id="agenda-day1-tab" data-toggle="tab" href="#agenda-day1" role="tab" aria-controls="agenda-day1" aria-selected="true">
+                Day 1 | 30 June 2025
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="agenda-day2-tab" data-toggle="tab" href="#agenda-day2" role="tab" aria-controls="agenda-day2" aria-selected="false">
+                Day 2 | 1 July 2025
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content" id="agendaTabsContent" style="background-color:#003047">
+        <!-- Agenda with Borders -->
+        <div class="agenda-bordered mb-5">
+            <style>
+                .agenda-bordered-table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    font-family: Helvetica, sans-serif;
+                    margin-bottom: 40px;
+                }
+                .agenda-bordered-table th,
+                .agenda-bordered-table td {
+                    border: 1px solid #ffffff;
+                    padding: 18px 30px 50px;
+                    border-left: none;
+               
+                   
+                    vertical-align: top;
+                }
+                .no-right-border{
+                    border-right: none !important;
+                }
+                .agenda-bordered-table th {
+                
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 900;
+                    text-align: left;
+                }
+                .agenda-bordered-table tr:not(:last-child) td {
+                    border-bottom: 1px solid #0091ff;
+                }
+                .agenda-bordered-table .agenda-time {
+                    color: #63d96a;
+                    font-weight: bold;
+                    width: 120px;
+                    font-size: 18px;
+                
+                }
+                .agenda-bordered-table .agenda-title {
+                    color: #63d96a;
+                    font-size: 25px;
+                    font-weight: 700;
+                    margin-bottom: 6px;
+                }
+                .agenda-bordered-table .agenda-desc {
+                    color: #ffffff;
+                    font-size: 20px;
+                    margin: 0;
+                }
+                @media (max-width: 767px) {
+                    .agenda-bordered-table th,
+                    .agenda-bordered-table td {
+                        padding: 10px 8px;
+                        font-size: 14px;
+                    }
+                    .agenda-bordered-table .agenda-title {
+                        font-size: 15px;
+                    }
+                }
+            </style>
+           
+           
+        </div>
+        <div class="tab-pane fade show active" id="agenda-day1" role="tabpanel" aria-labelledby="agenda-day1-tab">
+          <table class="agenda-bordered-table">
+             
+                <tr>
+                    <td class="agenda-time">09:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Arrivals, Coffee, Networking & Exhibition Tours</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">10:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" sty>Opening Ceremony</div>
+                        <p class="agenda-desc">Remarks & Keynotes Spotlight: Africa’s Energy Imperative by Dr L Zerbo, Chairman, Rwanda Atomic Energy Board. High level panel | Global Nuclear Leadership</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">11:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Safe, Secure and Peaceful Use of Nuclear Technologies</div>
+                        <p class="agenda-desc">Exploring regulatory frameworks, security measures, and international cooperation for sustainable, non-proliferative nuclear development.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">12:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Ministerial Panel: Contextualizing Africa Energy Needs and Securing Political Commitment</div>
+                        <p class="agenda-desc">National priorities, regional cooperation, and political commitment for integrating SMRs and MMRs into Africa’s energy future.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">13:00 - 14:00</td>
+                    <td class="no-right-border"> 
+                        <div class="agenda-title" style="color:#63d96a;">LUNCH</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">14:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Insights in Nuclear Deployment</div>
+                        <p class="agenda-desc">Real-world insights, case studies, and lessons learned from nuclear deployment globally and in emerging markets.</p>
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td class="agenda-time">15:45</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Mobilizing Capital Investment</div>
+                        <p class="agenda-desc">Innovative financing models, risk mitigation, and public-private partnerships for nuclear deployment in Africa.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">16:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" style="color:#63d96a;">Power Hour: B2B Meetings, Networking, Exhibition tours</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="agenda-day2" role="tabpanel" aria-labelledby="agenda-day2-tab">
+             <table class="agenda-bordered-table">
+             
+                <tr>
+                    <td class="agenda-time">09:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Arrivals, Coffee, Networking & Exhibition Tours</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">10:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" sty>Spotlight: Addressing safety & environmental concerns</div>
+                        <p class="agenda-desc">Remarks & Keynotes Spotlight: Africa’s Energy Imperative by Dr L Zerbo, Chairman, Rwanda Atomic Energy Board. High level panel | Global Nuclear Leadership</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">10:15</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Spotlight: Innovations Powering the Future</div>
+                        <p class="agenda-desc">This session will spotlight breakthrough innovations in Small Modular Reactors (SMRs) and their transformative potential for Africa’s energy landscape. Industry leaders and technology developers will present the latest advancements in SMR design, deployment, and scalability. Discussions will highlight how these innovations can provide reliable,
+                             flexible, and low-carbon energy solutions tailored to Africa’s growing and decentralized energy needs.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">10:45</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Infrastructure Readiness for SMRs and Micro Reactors in Africa</div>
+                        <p class="agenda-desc">The successful deployment of Small Modular and Micro Reactors depends on more than technology—it requires robust supporting infrastructure. This session will assess Africa’s current infrastructure landscape and identify critical gaps in grid capacity, transportation, water access, and skilled workforce development. Experts will explore what it takes to create enabling conditions for SMR/MMR rollout, 
+                            including integrated planning, cross-sector coordination, and investment in local capabilities.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">11:30</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" style="">Knowledge Nexus: Advancement in Fuel Types & Waste Management Innovation</div>
+                     <p class="agenda-desc">As nuclear technologies evolve, so too must the approaches to fuel design and waste management. This session will explore cutting-edge developments in advanced fuel types, including those tailored for SMRs and Micro Reactors, as well as innovative solutions for managing nuclear waste safely and sustainably. Experts will discuss circular fuel cycles, storage innovations, and the potential for 
+                        regional collaboration in addressing Africa’s unique needs and future readiness.</p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">12:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Spotlight: Women Championing Nuclear Energy Implementation in Africa</div>
+                        <p class="agenda-desc">From engineering and policy to advocacy and education, female leaders are shaping the continent’s nuclear future. Panelists will share their journeys, challenges, and impact—while discussing strategies to increase gender inclusion, mentorship, and leadership in the nuclear sector. The session aims to amplify women's voices and accelerate a more diverse and equitable energy transition.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">13:00 - 14:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" style="">LUNCH</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">14:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title">Powering Potential: Youth & the Nuclear Energy Transition</div>
+                        <p class="agenda-desc">Africa’s energy future depends on the vision, skills, and leadership of its youth. This session will spotlight young professionals, students, and emerging leaders who are shaping the future of nuclear science and technology. Discussions will focus on education pathways, mentorship, career development, and youth-led innovation. The session aims to inspire investment in youth capacity building and foster a 
+                            new generation of nuclear champions across the continent.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">15:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" style="color:#63d96a;">Accelerating Nuclear Regulation in a Rapidly Changing World</div>
+                         <p class="agenda-desc">As nuclear technologies evolve and deployment timelines shorten, regulatory systems must adapt to keep pace. This session will explore how African countries can modernize nuclear regulatory frameworks to support innovation while maintaining safety and public trust. Discussions will cover agile licensing processes, regional collaboration, regulatory capacity building, and the role of international standards in enabling timely 
+                            and responsible nuclear energy development across the continent.</p>
+
+                    </td>
+                </tr>
+                        <tr>
+                    <td class="agenda-time">16:00</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" style="color:#63d96a;">Closing Ceremony</div>
+                         
+
+                    </td>
+                </tr>
+                     <tr>
+                    <td class="agenda-time">16:45</td>
+                    <td class="no-right-border">
+                        <div class="agenda-title" style="color:#63d96a;">Power Hour: B2B Meetings, Networking, Exhibition tours</div>
+                         
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+$(function() {
+    $('#agendaTabs a').on('click', function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+});
+</script>
+
+      
+    </div>
+    
+   
+</section> 
+
+<section>
+
+   <footer>
+        <div class="up-section">
+            <a href="#" class="f-logo"><img src="img/ANES.png" style="width: 350px; margin-top: -50px;" ></a>
+
+            <ul>
+                <h1 class="mb-3">Contacts</h1>
+                <li><a href="#">summit@nesiafrica.org</a></li>
+                
+            </ul>
+
+            <ul>
+                <h1 class="mb-3">Follow</h1>
+                <li style="display: inline-block;">
+                    <a href="https://www.linkedin.com/company/neisaafrica/" target="_blank" aria-label="LinkedIn" style="color:#0091ff;">
+                        <i class="fa fa-linkedin" style="font-size: 22px;"></i>
+                    </a>
+                </li>
+                <li style="display: inline-block; margin-right: 10px;"></li>
+ 
+                    <a href="https://x.com/neisaafrica" target="_blank" aria-label="X (Twitter)" style="color:#0091ff; ">
+                        <svg width="18" height="22" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+                            <path d="M1199.61 0H944.13L600.01 464.13L255.87 0H0L464.13 630.87L0 1227H255.87L600.01 762.87L944.13 1227H1199.61L735.48 596.13L1199.61 0ZM944.13 1117.74L600.01 653.61L255.87 1117.74H111.48L600.01 451.13L1088.54 1117.74H944.13ZM255.87 109.26L600.01 573.39L944.13 109.26H1088.54L600.01 775.87L111.48 109.26H255.87Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </li>
+          
+            </ul>
+
+            <ul>
+                <h1 class="mb-3">Policy</h1>
+                <li><p>Privacy Policy</p></li>
+                <li><p>Terms and Conditions</p></li>
+              
+            </ul>
+        </div>
+
+
+
+        <p class="text-white"><span class="">NEISA</span>Copyright 2025</p>
+    </footer>
+<!-- <footer style="background: url('img/footer_back.jpg') no-repeat center center/cover; height: 100px; color: #fff;">
+
+    <div class="container">
+        <div class="align-items-center">
+        
+     
+            <div class=" text-center " style="padding: 10px; ">
+                <p style="margin-top: 30px; font-size: 14px;">&copy; 2025 NEISA. All Rights Reserved.</p>
             </div>
         </div>
-    </footer>
-    <!-- footer_end  -->
+    </div>
+</footer> -->
+    </div>
+</section>
+    </mian>
+
+   
 
     <!-- JS here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
@@ -419,6 +1301,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <script src="js/main.js"></script>
+    <script>
+        document.querySelector('.btn-gradient').addEventListener('click', function(event) {
+            event.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

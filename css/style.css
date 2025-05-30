@@ -2987,6 +2987,11 @@ footer {
    .apply-sec{
     margin-top: 30px !important;
    }
+
+   .card-2 h5{
+
+  margin-top: -4px !important;
+   }
 }
 @media (max-width: 769px) and (min-width: 990px){
 
