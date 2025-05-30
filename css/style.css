@@ -2985,6 +2985,9 @@ footer {
    .col1 p{
     font-size: 18px !important;
    }
+   .hero-row{
+    margin-top: -20px !important;
+   }
 
   .hero-text-1{
     margin-top: 10px !important;
